@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Racing News</title>
+<style>
+:root{--bg:#fff;--fg:#111;--mut:#666;--card:#f7f7f8;--line:#e5e5e7}
+@media(prefers-color-scheme:dark){:root{--bg:#0d0d0f;--fg:#f2f2f3;--mut:#9a9aa0;--card:#161618;--line:#26262a}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:720px;margin:0 auto;padding:16px}
+header{padding:8px 0 4px}h1{margin:0;font-size:24px}
+.sub{color:var(--mut);font-size:13px;margin:4px 0 12px}
+.chips{display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap}
+.chip{border:1px solid var(--line);background:var(--card);color:var(--fg);
+border-radius:20px;padding:6px 14px;font-size:14px;cursor:pointer}
+.chip.on{background:var(--fg);color:var(--bg)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;
+margin-bottom:10px;overflow:hidden}
+.card a{display:block;padding:14px;color:inherit;text-decoration:none}
+.card h2{margin:8px 0 4px;font-size:17px;line-height:1.35}
+.badge{color:#fff;font-size:11px;font-weight:700;border-radius:6px;
+padding:2px 8px;letter-spacing:.5px}
+.meta{color:var(--mut);font-size:12px;margin:0}
+.desc{color:var(--mut);font-size:14px;margin:8px 0 0;line-height:1.45}
+.hide{display:none}
+footer{color:var(--mut);font-size:12px;text-align:center;padding:20px 0}
+</style></head><body><div class="wrap">
+<header><h1>&#128014; Racing News</h1>
+<p class="sub">Updated Mon Oct 12, 07:17 AM &middot; 55 stories &middot; auto-refreshes every few hours</p></header>
+<div class="chips"><button class="chip on" data-f="all">All</button><button class="chip" data-f="BH">BloodHorse</button><button class="chip" data-f="TDN">TDN</button></div>
+<div id="feed">
+    <article class="card" data-src="BH">
+      <a href="https://www.bloodhorse.com/horse-racing/articles/295214/first-crop-weanlings-highlight-f-t-saratoga-mixed-sale" target="_blank" rel="noopener">
+        <span class="badge" style="background:#0a4d8c">BH</span>
+        <h2>First-Crop Weanlings Highlight F-T Saratoga Mixed Sale</h2>
+        <p class="meta">BloodHorse &middot; 1m ago</p>
+        <p class="desc">The one-day auction offers a variety of New York-bred weanlings and a handful of broodmares in foal to attractive stallions.</p>
+      </a>
+    </article>
+    <article class="card" data-src="BH">
+      <a href="https://www.bloodhorse.com/horse-racing/articles/295215/time-to-dazzle-repeats-in-thrilling-franklin-stakes" target="_blank" rel="noopener">
+        <span class="badge" style="background:#0a4d8c">BH</span>
+        <h2>Time to Dazzle Repeats in Thrilling Franklin Stakes</h2>
+        <p class="meta">BloodHorse &middot; 20m ago</p>
+        <p class="desc">Unleashing her trademark late kick, 5-year-old Time to Dazzle lived up to her name, charging from the back of the pack to capture the $400,000 Franklin Stakes (G2T) Oct. 11 at Keeneland for the second year in a row.</p>
+      </a>
+    </article>
+    <article class="card" data-src="BH">
+      <a href="https://www.bloodhorse.com/horse-racing/articles/295216/magic-millions-launch-bumper-week-for-breeze-up-market" target="_blank" rel="noopener">
+        <span class="badge" style="background:#0a4d8c">BH</span>
+        <h2>Magic Millions Launch Bumper Week for Breeze-up Market</h2>
+        <p class="meta">BloodHorse &middot; 40m ago</p>
+        <p class="desc">An unusually busy week for the Australasian horses-in-training market gets underway Oct. 12 when Magic Millions stages its Gold Coast auction, just three days before Inglis hosts its Ready2Race Sale at Riverside Stables.</p>
+      </a>
+    </article>
+    <article class="card" data-src="BH">
+      <a href="https://www.bloodhorse.com/horse-racing/articles/295212/bauer-contemplates-next-race-for-tam-tam" target="_blank" rel="noopener">
+        <span class="badge" style="background:#0a4d8c">BH</span>
+        <h2>Bauer Contemplates Next Race for Tam Tam</h2>
+        <p class="meta">BloodHorse &middot; 1h ago</p>
+        <p class="desc">Now that Tam Tam is a two-time grade 1 winner, trainer Phil Bauer is weighing making an attempt at a third in the Dec. 26 American Oaks (G1T) or waiting for her 4-year-old campaign.</p>
+      </a>
+    </article>
+    <article class="card" data-src="BH">
+      <a href="https://www.bloodhorse.com/horse-racing/articles/295210/champions-crowned-at-thoroughbred-makeover" target="_blank" rel="noopener">
+        <span class="badge" style="background:#0a4d8c">BH</span>
+        <h2>Champions Crowned at Thoroughbred Makeover</h2>
+        <p class="meta">BloodHorse &middot; 1h ago</p>
+        <p class="desc">Ten champions were crowned at the 2026 Thoroughbred Makeover and National Symposium, which came to a close Oct. 10.</p>
+      </a>
+    </article>
+    <article class="card" data-src="BH">
+      <a href="https://www.bloodhorse.com/horse-racing/articles/295211/ortiz-ready-for-riding-debut-at-keeneland" target="_blank" rel="noopener">
+        <span class="badge" style="background:#0a4d8c">BH</span>
+        <h2>Ortiz Ready for Riding Debut at Keeneland</h2>
+        <p class="meta">BloodHorse &middot; 1h ago</p>
+        <p class="desc">Yomar Ortiz Jr., a 17-year-old son of a jockey, is set to make his own riding debut on one of racing&#x27;s biggest stages, Keeneland, Oct. 14.</p>
+      </a>
+    </article>
+    <article class="card" data-src="BH">
+      <a href="https://www.bloodhorse.com/horse-racing/articles/295209/grade-1-winner-toms-detat-dies-after-brief-illness" target="_blank" rel="noopener">
+        <span class="badge" style="background:#0a4d8c">BH</span>
+        <h2>Grade 1 Winner Tom&#x27;s d&#x27;Etat Dies After Brief Illness</h2>
+        <p class="meta">BloodHorse &middot; 2h ago</p>
+        <p class="desc">Grade 1 winner and stallion Tom&#x27;s d&#x27;Etat has died following a brief illness, GMB Racing&#x27;s Greg Bensel said in an Oct. 11 post on X. He was 13.</p>
+      </a>
+    </article>
+    <article class="card" data-src="BH">
+      <a href="https://www.bloodhorse.com/horse-racing/articles/295213/tattersalls-notebook-americans-have-banner-book-1" target="_blank" rel="noopener">
+        <span class="badge" style="background:#0a4d8c">BH</span>
+        <h2>Tattersalls Notebook: Americans Have Banner Book 1</h2>
+        <p class="meta">BloodHorse &middot; 2h ago</p>
+        <p class="desc">The last few years American buyers have flirted with setting new benchmarks when they participate in Book 1 of the Tattersalls October Yearling Sale. This year, the spending record fell and the mark for lots bought was m</p>
+      </a>
+    </article>
+    <article class="card" data-src="BH">
+      <a href="https://www.bloodhorse.com/horse-racing/articles/295208/forever-young-phileas-fogg-work-at-belmont-for-classic" target="_blank" rel="noopener">
+        <span class="badge" style="background:#0a4d8c">BH</span>
+        <h2>Forever Young, Phileas Fogg Work at Belmont for Classic</h2>
+        <p class="meta">BloodHorse &middot; 2h ago</p>
+        <p class="desc">Reigning Breeders&#x27; Cup Classic (G1) winner Forever Young and Suburban Stakes (G2) winner Phileas Fogg put in works at Belmont Park in preparation for the Breeders&#x27; Cup Classic Oct. 31 at Keeneland.</p>
+      </a>
+    </article>
+    <article class="card" data-src="BH">
+      <a href="https://www.bloodhorse.com/horse-racing/articles/295206/tattersalls-october-yearling-sale-book-2-begins-oct-12" target="_blank" rel="noopener">
+        <span class="badge" style="background:#0a4d8c">BH</span>
+        <h2>Tattersalls October Yearling Sale Book 2 Begins Oct. 12</h2>
+        <p class="meta">BloodHorse &middot; 3h ago</p>
+        <p class="desc">Reminders of Book 2 have been appearing in equine form across Newmarket lately as the bloodstock world readied itself for the next stage of the Tattersalls October Yearling Sale Oct. 12-14.</p>
+      </a>
+    </article>
+    <article class="card" data-src="BH">
+      <a href="https://www.bloodhorse.com/horse-racing/articles/295207/devaux-starts-foundation-to-support-education-tbreds" target="_blank" rel="noopener">
+        <span class="badge" style="background:#0a4d8c">BH</span>
+        <h2>DeVaux Starts Foundation to Support Education, TBreds</h2>
+        <p class="meta">BloodHorse &middot; 3h ago</p>
+        <p class="desc">Trainer Cherie DeVaux has established a non-profit foundation to provide educational scholarships to students pursuing careers in the equine industry and to support organizations dedicated to rescuing and protecting at-r</p>
+      </a>
+    </article>
+    <article class="card" data-src="BH">
+      <a href="https://www.bloodhorse.com/horse-racing/articles/295176/warwoven-notches-elite-double-in-caulfield-guineas-win" target="_blank" rel="noopener">
+        <span class="badge" style="background:#0a4d8c">BH</span>
+        <h2>Warwoven Notches Elite Double in Caulfield Guineas Win</h2>
+        <p class="meta">BloodHorse &middot; 3h ago</p>
+        <p class="desc">Warwoven now sits on top of the world as Australia&#x27;s preeminent 3-year-old after becoming just the fourth horse to complete the Golden Rose (G1)-Caulfield Guineas (G1) double Oct. 10 at Caulfield Racecourse.</p>
+      </a>
+    </article>
+    <article class="card" data-src="BH">
+      <a href="https://www.bloodhorse.com/horse-racing/stakes-result/295217/california-distaff-handicap-grand-slam-smile" target="_blank" rel="noopener">
+        <span class="badge" style="background:#0a4d8c">BH</span>
+        <h2>California Distaff Handicap: Grand Slam Smile</h2>
+        <p class="meta">BloodHorse &middot; 4h ago</p>
+        <p class="desc">California Distaff Handicap</p>
+      </a>
+    </article>
+    <article class="card" data-src="BH">
+      <a href="https://www.bloodhorse.com/horse-racing/stakes-result/295218/amtote-open-derby-jess-in-time" target="_blank" rel="noopener">
+        <span class="badge" style="background:#0a4d8c">BH</span>
+        <h2>Amtote Open Derby: Jess in Time</h2>
+        <p class="meta">BloodHorse &middot; 4h ago</p>
+        <p class="desc">Amtote Open Derby</p>
+      </a>
+    </article>
+    <article class="card" data-src="BH">
+      <a href="https://www.bloodhorse.com/horse-racing/stakes-result/295219/glorious-song-stakes-lamirada" target="_blank" rel="noopener">
+        <span class="badge" style="background:#0a4d8c">BH</span>
+        <h2>Glorious Song Stakes: Lamirada</h2>
+        <p class="meta">BloodHorse &middot; 4h ago</p>
+        <p class="desc">Glorious Song Stakes</p>
+      </a>
+    </article>
+    <article class="card" data-src="BH">
+      <a href="https://www.bloodhorse.com/horse-racing/stakes-result/295220/display-stakes-odenkirk" target="_blank" rel="noopener">
+        <span class="badge" style="background:#0a4d8c">BH</span>
+        <h2>Display Stakes: Odenkirk</h2>
+        <p class="meta">BloodHorse &middot; 5h ago</p>
+        <p class="desc">Display Stakes</p>
+      </a>
+    </article>
+    <article class="card" data-src="BH">
+      <a href="https://www.bloodhorse.com/horse-racing/stakes-result/295221/actra-claiming-fillies-and-mares-stakes-oki" target="_blank" rel="noopener">
+        <span class="badge" style="background:#0a4d8c">BH</span>
+        <h2>ACTRA Claiming Fillies and Mares Stakes: Oki</h2>
+        <p class="meta">BloodHorse &middot; 5h ago</p>
+        <p class="desc">ACTRA Claiming Fillies and Mares Stakes</p>
+      </a>
+    </article>
+    <article class="card" data-src="BH">
+      <a href="https://www.bloodhorse.com/horse-racing/stakes-result/295222/new-mexico-state-fair-thoroughbred-futurity-runaway-q" target="_blank" rel="noopener">
+        <span class="badge" style="background:#0a4d8c">BH</span>
+        <h2>New Mexico State Fair Thoroughbred Futurity: Runaway Q</h2>
+        <p class="meta">BloodHorse &middot; 5h ago</p>
+        <p class="desc">New Mexico State Fair Thoroughbred Futurity</p>
+      </a>
+    </article>
+    <article class="card" data-src="BH">
+      <a href="https://www.bloodhorse.com/horse-racing/stakes-result/295223/josephine-county-juvenile-stakes-spicy-coronarita" target="_blank" rel="noopener">
+        <span class="badge" style="background:#0a4d8c">BH</span>
+        <h2>Josephine County Juvenile Stakes: Spicy Coronarita</h2>
+        <p class="meta">BloodHorse &middot; 6h ago</p>
+        <p class="desc">Josephine County Juvenile Stakes</p>
+      </a>
+    </article>
+    <article class="card" data-src="BH">
+      <a href="https://www.bloodhorse.com/horse-racing/stakes-result/295224/franklin-stakes-g2t-time-to-dazzle" target="_blank" rel="noopener">
+        <span class="badge" style="background:#0a4d8c">BH</span>
+        <h2>Franklin Stakes (G2T): Time to Dazzle</h2>
+        <p class="meta">BloodHorse &middot; 6h ago</p>
+        <p class="desc">Franklin Stakes</p>
+      </a>
+    </article>
+    <article class="card" data-src="BH">
+      <a href="https://www.bloodhorse.com/horse-racing/stakes-result/295225/fillies-oaks-witts-dubai-gal" target="_blank" rel="noopener">
+        <span class="badge" style="background:#0a4d8c">BH</span>
+        <h2>Fillies Oaks: Witt&#x27;s Dubai Gal</h2>
+        <p class="meta">BloodHorse &middot; 6h ago</p>
+        <p class="desc">Fillies Oaks</p>
+      </a>
+    </article>
+    <article class="card" data-src="BH">
+      <a href="https://www.bloodhorse.com/horse-racing/articles/295180/third-coast-seizes-winning-trip-in-hill-prince" target="_blank" rel="noopener">
+        <span class="badge" style="background:#0a4d8c">BH</span>
+        <h2>Third Coast Seizes Winning Trip in Hill Prince</h2>
+        <p class="meta">BloodHorse &middot; 7h ago</p>
+        <p class="desc">As far as a pace setup goes, it was a perfect one for jockey Jose Lezcano and Glen Hill Farm&#x27;s homebred Third Coast in the Hill Prince Stakes (G3T) Oct. 10 at Belmont Park.</p>
+      </a>
+    </article>
+    <article class="card" data-src="BH">
+      <a href="https://www.bloodhorse.com/horse-racing/articles/295181/canadian-jockey-wilson-rides-2-000th-winner" target="_blank" rel="noopener">
+        <span class="badge" style="background:#0a4d8c">BH</span>
+        <h2>Canadian Jockey Wilson Rides 2,000th Winner</h2>
+        <p class="meta">BloodHorse &middot; 7h ago</p>
+        <p class="desc">Emma-Jayne Wilson, one of the most accomplished female jockeys in Thoroughbred racing history, reaches a milestone of riding 2,000 winners by piloting Vanity to victory in the seventh race Oct. 10 at Woodbine.</p>
+      </a>
+    </article>
+    <article class="card" data-src="BH">
+      <a href="https://www.bloodhorse.com/horse-racing/articles/295179/tam-tam-cruises-on-lead-to-take-queen-elizabeth-ii" target="_blank" rel="noopener">
+        <span class="badge" style="background:#0a4d8c">BH</span>
+        <h2>Tam Tam Cruises on Lead to Take Queen Elizabeth II</h2>
+        <p class="meta">BloodHorse &middot; 7h ago</p>
+        <p class="desc">Tam Tam went for the early lead in the Queen Elizabeth II Challenge Cup Stakes (G1T) Oct. 10 at Keeneland and never let up, as the Phil Bauer-trained filly won her second straight grade 1 event after taking the Del Mar O</p>
+      </a>
+    </article>
+    <article class="card" data-src="BH">
+      <a href="https://www.bloodhorse.com/horse-racing/articles/295178/prat-gets-feel-for-magnitude-with-breeze-at-keeneland" target="_blank" rel="noopener">
+        <span class="badge" style="background:#0a4d8c">BH</span>
+        <h2>Prat Gets Feel for Magnitude With Breeze at Keeneland</h2>
+        <p class="meta">BloodHorse &middot; 8h ago</p>
+        <p class="desc">Preparing for riding Magnitude in the Oct. 31 Breeders&#x27; Cup Classic (G1) at Keeneland, jockey Flavien Prat put the colt through a 5-furlong in-company breeze in 1:00 3/5 Oct. 10 at the Lexington track.</p>
+      </a>
+    </article>
+    <article class="card" data-src="TDN">
+      <a href="https://www.thoroughbreddailynews.com/army-mules-lamirada-romps-in-glorious-song/" target="_blank" rel="noopener">
+        <span class="badge" style="background:#7a1f1f">TDN</span>
+        <h2>Army Mule’s Lamirada Romps in Glorious Song</h2>
+        <p class="meta">TDN &middot; 12h ago</p>
+        <p class="desc">Although she faded in the stretch after setting the pace in the Sept. 12 GI Natalma Stakes on the grass, the public remembered Lamirada (f, 2, Army Mule&amp;#8211;Sister Nova, by Verrazano)&#x27;s maiden special weight tour de fo</p>
+      </a>
+    </article>
+    <article class="card" data-src="TDN">
+      <a href="https://www.thoroughbreddailynews.com/online-gambling-to-remain-unaffected-by-eu-budget-negotiations/" target="_blank" rel="noopener">
+        <span class="badge" style="background:#7a1f1f">TDN</span>
+        <h2>Online Gambling to Remain Unaffected by EU Budget Negotiations</h2>
+        <p class="meta">TDN &middot; 13h ago</p>
+        <p class="desc">The European and Mediterranean Horseracing Federation (EMHF) and the European Trotting Union (UET) have welcomed the Irish Presidency&#x27;s decision to leave online gambling out of the EU budget negotiating box. &amp;#8220;We we</p>
+      </a>
+    </article>
+    <article class="card" data-src="TDN">
+      <a href="https://www.thoroughbreddailynews.com/week-in-review-as-jersey-season-nears-end-drazin-vows-to-fight-on/" target="_blank" rel="noopener">
+        <span class="badge" style="background:#7a1f1f">TDN</span>
+        <h2>Week In Review: As Jersey Season Nears End, Drazin Vows To Fight On</h2>
+        <p class="meta">TDN &middot; 13h ago</p>
+        <p class="desc">Saturday was the penultimate night of the 2026 New Jersey racing season and the card at the Meadowlands was, sadly, typical of what has become of the sport in the Garden State. There were only six races, with 44 horses t</p>
+      </a>
+    </article>
+    <article class="card" data-src="TDN">
+      <a href="https://www.thoroughbreddailynews.com/ieva26-keeping-the-horse-at-the-centre-of-the-conference/" target="_blank" rel="noopener">
+        <span class="badge" style="background:#7a1f1f">TDN</span>
+        <h2>IEVA’26, Keeping the Horse at the Centre of the Conference</h2>
+        <p class="meta">TDN &middot; 14h ago</p>
+        <p class="desc">The 2026 Irish Equine Veterinary Association Conference will be hosted by the IEVA from Thursday, November 5 to Saturday, November 7 at the Lyrath Estate, County Kilkenny. Key speakers will include Dr Emma Adam, Dr David</p>
+      </a>
+    </article>
+    <article class="card" data-src="TDN">
+      <a href="https://www.thoroughbreddailynews.com/time-to-dazzle-repeats-in-the-franklin/" target="_blank" rel="noopener">
+        <span class="badge" style="background:#7a1f1f">TDN</span>
+        <h2>Time To Dazzle Repeats In The Franklin</h2>
+        <p class="meta">TDN &middot; 14h ago</p>
+        <p class="desc">Time to Dazzle (Not This Time) came flying down the center of the Keeneland turf course Sunday to successfully defend her crown and win the GII Franklin Stakes for the second year running. Unable to find the winner&#x27;s cir</p>
+      </a>
+    </article>
+    <article class="card" data-src="TDN">
+      <a href="https://www.thoroughbreddailynews.com/nyquists-odenkirk-skips-clear-in-display-stakes/" target="_blank" rel="noopener">
+        <span class="badge" style="background:#7a1f1f">TDN</span>
+        <h2>Nyquist’s Odenkirk Skips Clear in Display Stakes</h2>
+        <p class="meta">TDN &middot; 14h ago</p>
+        <p class="desc">D. J. Stables LLC&#x27;s Odenkirk (c, 2, Nyquist&amp;#8211;Astrollinthepark, by Divine Park) captured Sunday&#x27;s Display Stakes at Woodbine for 2-year-olds over seven furlongs on the synthetic to stay unbeaten after a slight delay </p>
+      </a>
+    </article>
+    <article class="card" data-src="TDN">
+      <a href="https://www.thoroughbreddailynews.com/not-a-bad-batch-is-it-hascombe-and-valiant-enjoying-banner-year-for-book-2-graduates/" target="_blank" rel="noopener">
+        <span class="badge" style="background:#7a1f1f">TDN</span>
+        <h2>‘Not a Bad Batch, Is It?’ – Hascombe and Valiant Enjoying Banner Year for Book 2 Graduates</h2>
+        <p class="meta">TDN &middot; 15h ago</p>
+        <p class="desc">The October chill in Newmarket has already brought with it a couple of results to warm the soul for the team at Anthony Oppenheimer&#x27;s Hascombe and Valiant Stud, with perhaps the most unexpected coming at Pardubice on Sun</p>
+      </a>
+    </article>
+    <article class="card" data-src="TDN">
+      <a href="https://www.thoroughbreddailynews.com/plenty-of-momentum-as-fasig-tipton-stages-saratoga-fall-mixed-sale/" target="_blank" rel="noopener">
+        <span class="badge" style="background:#7a1f1f">TDN</span>
+        <h2>Plenty of Momentum as Fasig-Tipton Stages Saratoga Fall Mixed Sale</h2>
+        <p class="meta">TDN &middot; 16h ago</p>
+        <p class="desc">With a wildly successful yearling sales season in the books, the auction focus turns its attention to the breeding stock sales. While the big events occur in Lexington in the immediate aftermath of the Breeders&#x27; Cup Worl</p>
+      </a>
+    </article>
+    <article class="card" data-src="TDN">
+      <a href="https://www.thoroughbreddailynews.com/2026-thoroughbred-makeover-crowns-10-champions/" target="_blank" rel="noopener">
+        <span class="badge" style="background:#7a1f1f">TDN</span>
+        <h2>2026 Thoroughbred Makeover Crowns 10 Champions</h2>
+        <p class="meta">TDN &middot; 17h ago</p>
+        <p class="desc">The 2026 Thoroughbred Makeover event, held Saturday in Lexington, KY, crowned champions across 10 disciplines while awarding over $135,000 in guaranteed base prize money and an additional $40,000 in special awards. The 1</p>
+      </a>
+    </article>
+    <article class="card" data-src="TDN">
+      <a href="https://www.thoroughbreddailynews.com/breeders-cup-prep-continues-at-belmont-for-forever-young/" target="_blank" rel="noopener">
+        <span class="badge" style="background:#7a1f1f">TDN</span>
+        <h2>Breeders’ Cup Prep Continues At Belmont For Forever Young</h2>
+        <p class="meta">TDN &middot; 17h ago</p>
+        <p class="desc">Reigning Eclipse-winning Older Dirt Horse Forever Young (Jpn) (Real Steel {Jpn}) continued his preparation for a return tilt in the GI Breeders&#x27; Cup Classic Oct. 31 with a half-mile breeze at Belmont Park Sunday morning.</p>
+      </a>
+    </article>
+    <article class="card" data-src="TDN">
+      <a href="https://www.thoroughbreddailynews.com/grade-i-winner-toms-detat-passes/" target="_blank" rel="noopener">
+        <span class="badge" style="background:#7a1f1f">TDN</span>
+        <h2>Grade I Winner Tom’s d’Etat Passes</h2>
+        <p class="meta">TDN &middot; 18h ago</p>
+        <p class="desc">Tom&#x27;s d&#x27;Etat (Smart Strike), who won three graded stakes races, including the 2019 GI Clark Stakes as a 7-year-old, has passed away. The news was reported via X by Greg Bensel, who oversees and manages the GMB Racing Sta</p>
+      </a>
+    </article>
+    <article class="card" data-src="TDN">
+      <a href="https://www.thoroughbreddailynews.com/letter-to-the-editor-you-cant-be-the-best-if-you-cant-run/" target="_blank" rel="noopener">
+        <span class="badge" style="background:#7a1f1f">TDN</span>
+        <h2>Letter to the Editor: You Can’t Be The Best If You Can’t Run</h2>
+        <p class="meta">TDN &middot; 20h ago</p>
+        <p class="desc">By Patrick Cooper Avec Gitane and Pastis, a bunch of youngsters are hanging out in a bar in Paris on the eve of the Arc. &amp;#8220;Mon Dieu, tomorrow is the Prix de l&#x27;Arc de Triomphe and it&#x27;s the best race in the world, we </p>
+      </a>
+    </article>
+    <article class="card" data-src="TDN">
+      <a href="https://www.thoroughbreddailynews.com/saxon-warriors-western-routs-cologne-winterfavoriten-rivals-in-style/" target="_blank" rel="noopener">
+        <span class="badge" style="background:#7a1f1f">TDN</span>
+        <h2>Saxon Warrior’s Western Routs Cologne Winterfavoriten Rivals In Style</h2>
+        <p class="meta">TDN &middot; 20h ago</p>
+        <p class="desc">Trainer Henk Grewe annexed Cologne&#x27;s G3 Wettstar Preis des Winterfavoriten with Rubaiyat in 2019 and Sea Bay in 2021 and made it a hat-trick of triumphs in Germany&#x27;s premier juvenile contest when Western (Saxon Warrior) </p>
+      </a>
+    </article>
+    <article class="card" data-src="TDN">
+      <a href="https://www.thoroughbreddailynews.com/dual-classic-placed-inis-mor-joins-all-star-cast-for-tattersalls-sceptre-sessions/" target="_blank" rel="noopener">
+        <span class="badge" style="background:#7a1f1f">TDN</span>
+        <h2>Dual Classic-Placed Inis Mor Joins All-Star Cast for Tattersalls Sceptre Sessions</h2>
+        <p class="meta">TDN &middot; 21h ago</p>
+        <p class="desc">The list of stars set to be offered at the Tattersalls December Mares Sale continues to grow, with the announcement that the G1 Irish Oaks runner-up and G1 Prix de Diane third Inis Mor (Galiway) will be offered as part o</p>
+      </a>
+    </article>
+    <article class="card" data-src="TDN">
+      <a href="https://www.thoroughbreddailynews.com/uncle-mos-third-coast-gets-first-jump-denies-favorite-in-hill-prince/" target="_blank" rel="noopener">
+        <span class="badge" style="background:#7a1f1f">TDN</span>
+        <h2>Uncle Mo’s Third Coast Gets First Jump, Denies Favorite in Hill Prince</h2>
+        <p class="meta">TDN &middot; 1d ago</p>
+        <p class="desc">He was patiently handled off the flank of a wild longshot, and with a well-timed rally, Third Coast (Uncle Mo) got first jump on the late-charging betting choice to win the GIII Hill Prince Stakes at Belmont Park. The so</p>
+      </a>
+    </article>
+    <article class="card" data-src="TDN">
+      <a href="https://www.thoroughbreddailynews.com/tam-tam-runs-qeii-rivals-off-their-feet-claims-second-elite-level-victory/" target="_blank" rel="noopener">
+        <span class="badge" style="background:#7a1f1f">TDN</span>
+        <h2>Tam Tam Runs QEII Rivals Off Their Feet, Claims Second Elite-Level Victory</h2>
+        <p class="meta">TDN &middot; 1d ago</p>
+        <p class="desc">She went right to the front, and would not come back late in the GI Queen Elizabeth II Challenge Cup at Keeneland, earning Tam Tam (Medaglia d&#x27;Oro) the honor of collecting her second elite-level victory Saturday afternoo</p>
+      </a>
+    </article>
+    <article class="card" data-src="TDN">
+      <a href="https://www.thoroughbreddailynews.com/expensive-corniche-breezer-tannhauser-a-smooth-opera-tor-at-keeneland/" target="_blank" rel="noopener">
+        <span class="badge" style="background:#7a1f1f">TDN</span>
+        <h2>Expensive Corniche Breezer Tannhauser A Smooth Opera-tor at Keeneland</h2>
+        <p class="meta">TDN &middot; 1d ago</p>
+        <p class="desc">Tannhauser (Corniche) impressed in Ocala earlier this year with a :9.4 breeze, bringing $550,000 from Lael Stables who debuted her on the turf at Keeneland on Saturday. The Virginia-bred, sent off at 6-1 odds, raced alon</p>
+      </a>
+    </article>
+    <article class="card" data-src="TDN">
+      <a href="https://www.thoroughbreddailynews.com/santa-anita-works-breeders-cup-hopefuls-lead-work-tab/" target="_blank" rel="noopener">
+        <span class="badge" style="background:#7a1f1f">TDN</span>
+        <h2>Santa Anita Works: Breeders’ Cup Hopefuls Lead Work Tab</h2>
+        <p class="meta">TDN &middot; 1d ago</p>
+        <p class="desc">A fleet of Breeders&#x27; Cup hopefuls was on the worktab Saturday morning at Santa Anita as they continued preparations for the World Championships at Keeneland. Returning to work for the first time since securing his automa</p>
+      </a>
+    </article>
+    <article class="card" data-src="TDN">
+      <a href="https://www.thoroughbreddailynews.com/flameaway-firster-global-unrest-earns-tdn-rising-star-plaudits-at-keeneland/" target="_blank" rel="noopener">
+        <span class="badge" style="background:#7a1f1f">TDN</span>
+        <h2>Flameaway Firster Global Unrest Earns ‘TDN Rising Star’ Plaudits at Keeneland</h2>
+        <p class="meta">TDN &middot; 1d ago</p>
+        <p class="desc">Klaravich Stables&#x27; Global Unrest (f, 2, Flameaway&amp;#8211;Beautiful Memories, by Hard Spun) covered stacks of ground circling the second turn of an eight-furlong turf maiden Saturday afternoon at Keeneland, but despite tha</p>
+      </a>
+    </article>
+    <article class="card" data-src="TDN">
+      <a href="https://www.thoroughbreddailynews.com/sovereignty-continues-breeders-cup-classic-preparations-at-the-spa/" target="_blank" rel="noopener">
+        <span class="badge" style="background:#7a1f1f">TDN</span>
+        <h2>Sovereignty Continues Breeders’ Cup Classic Preparations at the Spa</h2>
+        <p class="meta">TDN &middot; 1d ago</p>
+        <p class="desc">SARATOGA SPRINGS, NY &amp;#8211; Reigning Horse of the Year Sovereignty (Into Mischief), forced to miss last month&#x27;s GI Jockey Club Gold Cup with a foot abscess, turned in a strong gallop on a brisk Saturday morning at Sarat</p>
+      </a>
+    </article>
+    <article class="card" data-src="TDN">
+      <a href="https://www.thoroughbreddailynews.com/merlin-monroan-stays-perfect-with-keeneland-allowance-win/" target="_blank" rel="noopener">
+        <span class="badge" style="background:#7a1f1f">TDN</span>
+        <h2>Merlin Monroan Stays Perfect With Keeneland Allowance Win</h2>
+        <p class="meta">TDN &middot; 1d ago</p>
+        <p class="desc">Merlin Monroan (Olympiad), despite being the least-experienced runner in the field with just a single start under his belt, took all the money at 9-5  off a one-length debut win going seven furlongs at Kentucky Downs Sep</p>
+      </a>
+    </article>
+    <article class="card" data-src="TDN">
+      <a href="https://www.thoroughbreddailynews.com/sunday-racing-at-laurel-rescheduled-due-to-impending-weather-from-isaias/" target="_blank" rel="noopener">
+        <span class="badge" style="background:#7a1f1f">TDN</span>
+        <h2>Sunday Racing at Laurel Rescheduled due to Impending Weather from Isaias</h2>
+        <p class="meta">TDN &middot; 1d ago</p>
+        <p class="desc">Hurricane Isaias&#x27;s anticipated effects on the Mid-Atlantic region have forced Laurel Park to reschedule their Sunday card to Thursday, Oct. 15, the track announced Saturday afternoon. The nine-race card will be contest w</p>
+      </a>
+    </article>
+    <article class="card" data-src="TDN">
+      <a href="https://www.thoroughbreddailynews.com/keeneland-morning-report-magnitude-posts-latest-breeze-in-continuing-breeders-cup-preps/" target="_blank" rel="noopener">
+        <span class="badge" style="background:#7a1f1f">TDN</span>
+        <h2>Keeneland Morning Report: Magnitude Posts Latest Breeze in Continuing Breeders’ Cup Preps</h2>
+        <p class="meta">TDN &middot; 1d ago</p>
+        <p class="desc">Multiple Group/Grade I hero Magnitude (Not This Time) went through his paces Saturday morning at Keeneland in his continued preparations for the GI Breeders&#x27; Cup Classic at the venue later this month. Breezing in company</p>
+      </a>
+    </article>
+    <article class="card" data-src="TDN">
+      <a href="https://www.thoroughbreddailynews.com/sundays-racing-insights-pricey-charlatan-colt-makes-the-races-at-keeneland-on-sunday/" target="_blank" rel="noopener">
+        <span class="badge" style="background:#7a1f1f">TDN</span>
+        <h2>Sunday’s Racing Insights: Pricey Charlatan Colt Makes The Races At Keeneland On Sunday</h2>
+        <p class="meta">TDN &middot; 1d ago</p>
+        <p class="desc">9th-KEE, $110K, Msw, 3yo/up, 6f, 5:16 p.m. ET. EMILIO (Charlatan) was taken home as a $1.5-million Fasig-Tipton Saratoga Select yearling by John Stewart&#x27;s Resolute outfit, then breeder Stonestreet stayed in for a piece. </p>
+      </a>
+    </article>
+    <article class="card" data-src="TDN">
+      <a href="https://www.thoroughbreddailynews.com/roadster-filly-mercury-marauder-impresses-on-belmont-bow/" target="_blank" rel="noopener">
+        <span class="badge" style="background:#7a1f1f">TDN</span>
+        <h2>Roadster Filly Mercury Marauder Impresses on Belmont Bow</h2>
+        <p class="meta">TDN &middot; 1d ago</p>
+        <p class="desc">Off at a generous 6-1 in a race featuring a couple of high-profile debutantes by Uncle Mo, Mercury Marauder (Roadster) allowed those market leaders to take it to one another for the opening half-mile and pounced on them </p>
+      </a>
+    </article>
+    <article class="card" data-src="TDN">
+      <a href="https://www.thoroughbreddailynews.com/jackies-warrior-colt-hullabaloo-ray-ray-attains-tdn-rising-star-at-belmont-park/" target="_blank" rel="noopener">
+        <span class="badge" style="background:#7a1f1f">TDN</span>
+        <h2>Jackie’s Warrior Colt Hullabaloo Ray Ray Attains ‘TDN Rising Star’ At Belmont</h2>
+        <p class="meta">TDN &middot; 1d ago</p>
+        <p class="desc">Pounded into 2-5 favoritism to improve for a debut second to the very impressive all-the-way winner Dargham (Army Mule) at Saratoga Sept. 7, Glen Hill Farm&#x27;s flashy Hullabaloo Ray Ray (c, 2, Jackie&#x27;s Warrior&amp;#8211;Applau</p>
+      </a>
+    </article>
+    <article class="card" data-src="TDN">
+      <a href="https://www.thoroughbreddailynews.com/al-hamaad-outclasses-criterium-rivals-with-powerful-display-at-chantilly/" target="_blank" rel="noopener">
+        <span class="badge" style="background:#7a1f1f">TDN</span>
+        <h2>Al Hamaad Outclasses Criterium Rivals With Powerful Display At Chantilly</h2>
+        <p class="meta">TDN &middot; 1d ago</p>
+        <p class="desc">Prince Faisal&#x27;s €200,000 Arqana August acquisition Al Hamaad (Wootton Bassett) provided quick relief for his sire, just minutes after Sergei Diaghilev endured a narrow reversal at Newmarket, and outclassed his five oppon</p>
+      </a>
+    </article>
+    <article class="card" data-src="TDN">
+      <a href="https://www.thoroughbreddailynews.com/hes-extra-special-ninth-dewhurst-for-obrien-as-darkness-falls-beats-desert-castle/" target="_blank" rel="noopener">
+        <span class="badge" style="background:#7a1f1f">TDN</span>
+        <h2>‘He’s Extra Special’: Ninth Dewhurst For O’Brien As Darkness Falls Beats Desert Castle</h2>
+        <p class="meta">TDN &middot; 1d ago</p>
+        <p class="desc">Coolmore&#x27;s Triple Crown dreams are very much alive after Darkness Falls (Camelot) conquered Desert Castle (Frankel) in a thrilling tussle for Saturday&#x27;s G1 Darley Dewhurst Stakes at Newmarket. Sent off the 6-4 second fav</p>
+      </a>
+    </article>
+    <article class="card" data-src="TDN">
+      <a href="https://www.thoroughbreddailynews.com/book-1-millionaire-rock-montreal-keeps-on-rolling-in-the-autumn/" target="_blank" rel="noopener">
+        <span class="badge" style="background:#7a1f1f">TDN</span>
+        <h2>Book 1 Millionaire Rock Montreal Keeps On Rolling In The Autumn</h2>
+        <p class="meta">TDN &middot; 1d ago</p>
+        <p class="desc">Godolphin&#x27;s Roger Varian-conditioned Book 1 millionaire Rock Montreal (Blue Point), second to G1 Fillies&#x27; Mile third Forbidden Fire in Doncaster&#x27;s Listed Flying Scotsman when last seen, found the willpower to claim a wel</p>
+      </a>
+    </article>
+    <article class="card" data-src="TDN">
+      <a href="https://www.thoroughbreddailynews.com/ballydoyles-drumbeat-dominates-the-zetland/" target="_blank" rel="noopener">
+        <span class="badge" style="background:#7a1f1f">TDN</span>
+        <h2>Ballydoyle’s Drumbeat Dominates The Zetland</h2>
+        <p class="meta">TDN &middot; 1d ago</p>
+        <p class="desc">It was a case of business as usual in Newmarket&#x27;s G3 Native Trail Zetland Stakes on Saturday, with Ballydoyle&#x27;s Drumbeat (Wootton Bassett) dominating proceedings in the style of a live Derby prospect. An hour before his </p>
+      </a>
+    </article></div>
+<footer>Sources: BloodHorse, Thoroughbred Daily News &middot; links open the original articles</footer>
+</div>
+<script>
+document.querySelectorAll('.chip').forEach(function(c){
+ c.addEventListener('click',function(){
+  document.querySelectorAll('.chip').forEach(function(x){x.classList.remove('on');});
+  c.classList.add('on');var f=c.dataset.f;
+  document.querySelectorAll('.card').forEach(function(a){
+   a.classList.toggle('hide', f!=='all'&&a.dataset.src!==f);});});});
+</script></body></html>
