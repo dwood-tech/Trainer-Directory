@@ -1,863 +1,343 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Racing News</title>
+<title>Racing News — The Day's Racing, by Topic</title>
 <style>
-:root{--bg:#fff;--fg:#111;--mut:#666;--card:#f7f7f8;--line:#e5e5e7}
-@media(prefers-color-scheme:dark){:root{--bg:#0d0d0f;--fg:#f2f2f3;--mut:#9a9aa0;--card:#161618;--line:#26262a}}
+:root{--bg:#fdfcf9;--fg:#141311;--mut:#6b675f;--card:#fff;--line:#ddd8cd;--acc:#8a1f1f}
+@media(prefers-color-scheme:dark){:root{--bg:#0d0d0f;--fg:#f2f0ea;--mut:#9a968c;--card:#161618;--line:#2c2c28;--acc:#e08a8a}}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);
 font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
-.wrap{max-width:720px;margin:0 auto;padding:16px}
-header{padding:8px 0 4px}h1{margin:0;font-size:24px}
-.sub{color:var(--mut);font-size:13px;margin:4px 0 12px}
-.chips{display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap}
-.chip{border:1px solid var(--line);background:var(--card);color:var(--fg);
-border-radius:20px;padding:6px 14px;font-size:14px;cursor:pointer}
-.chip.on{background:var(--fg);color:var(--bg)}
-.card{background:var(--card);border:1px solid var(--line);border-radius:12px;
-margin-bottom:10px;overflow:hidden}
-.card a{display:block;padding:14px;color:inherit;text-decoration:none}
-.card h2{margin:8px 0 4px;font-size:17px;line-height:1.35}
-.badge{color:#fff;font-size:11px;font-weight:700;border-radius:6px;
-padding:2px 8px;letter-spacing:.5px}
-.meta{color:var(--mut);font-size:12px;margin:0}
-.desc{color:var(--mut);font-size:14px;margin:8px 0 0;line-height:1.45}
-.hide{display:none}
-.sitenav{margin:0 0 12px;font-size:14px}
+.wrap{max-width:760px;margin:0 auto;padding:16px}
+.masthead{text-align:center;border-bottom:3px double var(--fg);padding-bottom:10px;margin-bottom:6px}
+.masthead h1{font-family:Georgia,"Times New Roman",serif;font-size:34px;margin:2px 0 4px;letter-spacing:.5px}
+.dateline{color:var(--mut);font-size:12.5px;text-transform:uppercase;letter-spacing:1px}
+.sitenav{margin:10px 0 2px;font-size:14px}
 .sitenav a{color:var(--fg);text-decoration:none;border:1px solid var(--line);
-background:var(--card);border-radius:20px;padding:6px 14px;display:inline-block;margin-right:8px}
-footer{color:var(--mut);font-size:12px;text-align:center;padding:20px 0}
+background:var(--card);border-radius:20px;padding:6px 14px;display:inline-block}
+.chips{display:flex;gap:8px;margin:12px 0;flex-wrap:wrap}
+.chip{border:1px solid var(--line);background:var(--card);color:var(--fg);
+border-radius:20px;padding:6px 14px;font-size:13.5px;cursor:pointer}
+.chip.on{background:var(--fg);color:var(--bg)}
+.toplabel{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+color:var(--acc);margin:14px 0 8px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;
+margin-bottom:9px;overflow:hidden}
+.card a{display:block;padding:13px 14px;color:inherit;text-decoration:none}
+.card h2{font-family:Georgia,"Times New Roman",serif;margin:5px 0 4px;font-size:17.5px;line-height:1.3;font-weight:600}
+.card.hero{border:2px solid var(--fg)}
+.card.hero h2{font-size:24px;line-height:1.25}
+.kicker{color:var(--acc);font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase}
+.meta{color:var(--mut);font-size:12px;margin:6px 0 0}
+.desc{color:var(--mut);font-size:14px;margin:6px 0 0;line-height:1.45}
+.sechead{font-family:Georgia,"Times New Roman",serif;font-size:21px;margin:22px 0 0;
+border-bottom:1px solid var(--fg);padding-bottom:4px}
+.secsub{color:var(--mut);font-size:12.5px;margin:3px 0 10px;font-style:italic}
+.hide{display:none}
+footer{color:var(--mut);font-size:12px;text-align:center;padding:22px 0;border-top:1px solid var(--line);margin-top:10px}
 </style></head><body><div class="wrap">
-<header><h1>&#128014; Racing News</h1>
-<p class="sub">Updated Tue Oct 13, 08:24 PM &middot; 103 stories &middot; auto-refreshes every few hours</p>
+<header class="masthead"><h1>&#128014; Racing News</h1>
+<p class="dateline">Tuesday, October 13, 2026 &middot; 73 stories &middot; refreshed every few hours</p>
 <p class="sitenav"><a href="https://daily-pace-card-home-dwoodlcrhelp-9430.vercel.app">&#8592; Home</a></p></header>
-<div class="chips"><button class="chip on" data-f="all">All</button><button class="chip" data-f="BH">BloodHorse</button><button class="chip" data-f="TDN">TDN</button></div>
-<div id="feed">
-    <article class="card" data-src="BH">
-      <a href="https://www.bloodhorse.com/horse-racing/articles/295256/wyomings-sweetwater-downs-reports-strong-numbers" target="_blank" rel="noopener">
-        <span class="badge" style="background:#0a4d8c">BH</span>
-        <h2>Wyoming&#x27;s Sweetwater Downs Reports Strong Numbers</h2>
+<div class="chips"><button class="chip on" data-f="all">All</button><button class="chip" data-f="Breeders&#x27; Cup">Breeders&#x27; Cup</button><button class="chip" data-f="Stakes &amp; Results">Stakes &amp; Results</button><button class="chip" data-f="Sales">Sales</button><button class="chip" data-f="International">International</button><button class="chip" data-f="People &amp; Horses">People &amp; Horses</button><button class="chip" data-f="More Racing">More Racing</button></div>
+<div class="topbox"><div class="toplabel">Top Stories</div>
+    <article class="card hero" data-topic="People &amp; Horses">
+      <a href="https://www.bloodhorse.com/horse-racing/articles/295257/biomechanics-pioneer-seaman-dies-in-lexington-at-85" target="_blank" rel="noopener">
+        <span class="kicker">People &amp; Horses</span>
+        <h2>Biomechanics Pioneer Seaman Dies in Lexington at 85</h2>
+        <p class="desc">Cecil Seaman was among the first to compile physical measurements on Thoroughbreds for biomechanical evaluation.</p>
         <p class="meta">BloodHorse &middot; 1m ago</p>
-        <p class="desc">Sweetwater Downs closed out the 2026 Wyoming racing season (Thoroughbred and Quarter Horse racing) with record-setting prize money highlighted by the richest race in Wyoming history, the $300,000 Sweetwater Downs Futurit</p>
       </a>
     </article>
-    <article class="card" data-src="BH">
-      <a href="https://www.bloodhorse.com/horse-racing/articles/295252/goffs-unveils-november-foal-sale-catalog" target="_blank" rel="noopener">
-        <span class="badge" style="background:#0a4d8c">BH</span>
-        <h2>Goffs Unveils November Foal Sale Catalog</h2>
+    <article class="card" data-topic="More Racing">
+      <a href="https://www.bloodhorse.com/horse-racing/articles/295247/talented-turf-filly-tannhauser-named-hot-prospect" target="_blank" rel="noopener">
+        <span class="kicker">More Racing</span>
+        <h2>Talented Turf Filly Tannhauser Named Hot Prospect</h2>
+        <p class="desc">Juveniles Tannhauser and Jump Seat are the latest BloodHorse Maiden Watch Hot Prospects after promising victories at Keeneland.</p>
         <p class="meta">BloodHorse &middot; 20m ago</p>
-        <p class="desc">Goffs unveils the catalog for its November Foal Sale Oct. 13, and it can now be viewed online. It features 1,028 foals to be offered from Nov. 16-19 at Kildare Paddocks.</p>
       </a>
     </article>
-    <article class="card" data-src="TDN">
-      <a href="https://www.thoroughbreddailynews.com/hartunian-calls-lockout-at-turf-paradise-an-act-of-sabotage/" target="_blank" rel="noopener">
-        <span class="badge" style="background:#7a1f1f">TDN</span>
-        <h2>Hartunian Calls Lockout at Turf Paradise an Act of Sabotage</h2>
-        <p class="meta">TDN &middot; 33m ago</p>
-        <p class="desc">Gary Hartunian has fired the latest shot in the battle over control of Turf Paradise, issuing a statement Monday through his lawyer, Mitchell Nelson, alleging that former management personnel attempted to &amp;#8220;sabotage</p>
-      </a>
-    </article>
-    <article class="card" data-src="BH">
-      <a href="https://www.bloodhorse.com/horse-racing/articles/295254/the-last-dance-added-to-arqana-december-sale" target="_blank" rel="noopener">
-        <span class="badge" style="background:#0a4d8c">BH</span>
-        <h2>The Last Dance Added to Arqana December Sale</h2>
+    <article class="card" data-topic="More Racing">
+      <a href="https://www.bloodhorse.com/horse-racing/articles/295256/wyomings-sweetwater-downs-reports-strong-numbers" target="_blank" rel="noopener">
+        <span class="kicker">More Racing</span>
+        <h2>Wyoming&#x27;s Sweetwater Downs Reports Strong Numbers</h2>
+        <p class="desc">Sweetwater Downs closed out the 2026 Wyoming racing season (Thoroughbred and Quarter Horse racing) with record-setting prize money highlighted by the richest race in Wyoming history, the $300,000 Sweetwater Downs Futurit</p>
         <p class="meta">BloodHorse &middot; 40m ago</p>
-        <p class="desc">The Last Dance, runner-up in this year&#x27;s Poule d&#x27;Essai des Pouliches (French One Thousand Guineas, G1), has been added to the catalog for the Arqana Breeding Stock Sale and will be offered on the opening evening of the s</p>
-      </a>
-    </article>
-    <article class="card" data-src="BH">
-      <a href="https://www.bloodhorse.com/horse-racing/articles/295255/at-a-glance-movie-night-projects-as-top-raven-run-bet" target="_blank" rel="noopener">
-        <span class="badge" style="background:#0a4d8c">BH</span>
-        <h2>At a Glance: Movie Night Projects as Top Raven Run Bet</h2>
-        <p class="meta">BloodHorse &middot; 1h ago</p>
-        <p class="desc">A brief handicapping look at the Raven Run Stakes (G2) from America&#x27;s Best Racing.</p>
-      </a>
-    </article>
-    <article class="card" data-src="BH">
-      <a href="https://www.bloodhorse.com/horse-racing/articles/295253/racing-coverage-of-autumn-meets-top-weeks-tv-schedule" target="_blank" rel="noopener">
-        <span class="badge" style="background:#0a4d8c">BH</span>
-        <h2>Racing Coverage of Autumn Meets Top Week&#x27;s TV Schedule</h2>
-        <p class="meta">BloodHorse &middot; 1h ago</p>
-        <p class="desc">Fall race meets at Keeneland, Belmont Park, and other tracks are ongoing, and a premier steeplechase event, the Far Hills Race Meeting in New Jersey, is set for Saturday, Oct. 17. Radio, TV, and streaming coverage is pla</p>
-      </a>
-    </article>
-    <article class="card" data-src="BH">
-      <a href="https://www.bloodhorse.com/horse-racing/articles/295250/celebrated-kentucky-based-veterinarian-smith-dies-at-78" target="_blank" rel="noopener">
-        <span class="badge" style="background:#0a4d8c">BH</span>
-        <h2>Celebrated Kentucky-Based Veterinarian Smith Dies at 78</h2>
-        <p class="meta">BloodHorse &middot; 1h ago</p>
-        <p class="desc">Johnny Mac Smith, whose work with the Grayson-Jockey Club Research Foundation and with the Keeneland yearling inspection team made him a celebrated equine veterinarian, died Oct. 10 at his Woodford County, Ky. home after</p>
-      </a>
-    </article>
-    <article class="card" data-src="TDN">
-      <a href="https://www.thoroughbreddailynews.com/hullabaloo-ray-ray-the-making-of-a-tdn-rising-star-presented-by-hagyard/" target="_blank" rel="noopener">
-        <span class="badge" style="background:#7a1f1f">TDN</span>
-        <h2>Hullabaloo Ray Ray: The Making of a ‘TDN Rising Star, Presented by Hagyard’</h2>
-        <p class="meta">TDN &middot; 1h ago</p>
-        <p class="desc">This is the fourth installment in what will be an ongoing series, presented by Hagyard, in which we catch up with the connections behind TDN Rising Stars. We&#x27;ll go beyond the flashy performances to uncover the decisions </p>
-      </a>
-    </article>
-    <article class="card" data-src="BH">
-      <a href="https://www.bloodhorse.com/horse-racing/articles/295249/mindframe-leads-claiborne-2027-roster" target="_blank" rel="noopener">
-        <span class="badge" style="background:#0a4d8c">BH</span>
-        <h2>Mindframe Leads Claiborne 2027 Roster</h2>
-        <p class="meta">BloodHorse &middot; 2h ago</p>
-        <p class="desc">Claiborne Farm announced Oct. 13 the advertised stud fees for its 2027 stallion roster with multiple grade 1 winner Mindframe at the top at $40,000.</p>
-      </a>
-    </article>
-    <article class="card" data-src="BH">
-      <a href="https://www.bloodhorse.com/horse-racing/articles/295248/the-jockey-club-reports-declines-in-breeding-activity" target="_blank" rel="noopener">
-        <span class="badge" style="background:#0a4d8c">BH</span>
-        <h2>The Jockey Club Reports Declines in Breeding Activity</h2>
-        <p class="meta">BloodHorse &middot; 2h ago</p>
-        <p class="desc">The Jockey Club releases 2027 foal crop estimate and 2026 Report of Mares Bred statistics.</p>
-      </a>
-    </article>
-    <article class="card" data-src="TDN">
-      <a href="https://www.thoroughbreddailynews.com/wednesday-racing-insights-2-million-not-this-time-filly-ready-to-race-at-keeneland/" target="_blank" rel="noopener">
-        <span class="badge" style="background:#7a1f1f">TDN</span>
-        <h2>Wednesday Racing Insights: $2-Million Not This Time Filly Ready To Race At Keeneland</h2>
-        <p class="meta">TDN &middot; 2h ago</p>
-        <p class="desc">5th-KEE, $110K, Msw, 2yo, f, 6 1/2f, 3:08 p.m. ET. Bred by Hinkle Farms, MARANELLO (Not This Time) makes the gate for the Heider Family, who went to $2-million to acquire the filly duing Keeneland September. The Brendan </p>
-      </a>
-    </article>
-    <article class="card" data-src="BH">
-      <a href="https://www.bloodhorse.com/horse-racing/articles/295230/dollars-and-sense-texas-sized-losses" target="_blank" rel="noopener">
-        <span class="badge" style="background:#0a4d8c">BH</span>
-        <h2>Dollars &amp; Sense: Texas-Sized Losses</h2>
-        <p class="meta">BloodHorse &middot; 2h ago</p>
-        <p class="desc">Dollars &amp; Sense with Frank Angst, sponsored by NTRA, looks at the harmful economic impact from Texas&#x27; decision to not participate in the Horseracing Integrity and Safety Authority.</p>
-      </a>
-    </article>
-    <article class="card" data-src="TDN">
-      <a href="https://www.thoroughbreddailynews.com/i-was-confident-he-wouldnt-get-beaten-flightline-gets-first-jra-dirt-winner/" target="_blank" rel="noopener">
-        <span class="badge" style="background:#7a1f1f">TDN</span>
-        <h2>“I Was Confident He Wouldn’t Get Beaten’: Flightline Gets First JRA Dirt Winner</h2>
-        <p class="meta">TDN &middot; 2h ago</p>
-        <p class="desc">Yoshizawa Holding Co. Ltd&#x27;s American Soul (Flightline) provided his sire (by Tapit) with his fourth Japanese winner&amp;#8211;first on the JRA dirt&amp;#8211;and 10th overall with this popular debut success Monday afternoon at K</p>
-      </a>
-    </article>
-    <article class="card" data-src="TDN">
-      <a href="https://www.thoroughbreddailynews.com/cecil-seaman-passes-away-at-85/" target="_blank" rel="noopener">
-        <span class="badge" style="background:#7a1f1f">TDN</span>
-        <h2>Cecil Seaman Passes Away at 85</h2>
-        <p class="meta">TDN &middot; 2h ago</p>
-        <p class="desc">Cecil Seaman, recognized as the Thoroughbred industry&#x27;s leading expert in equine biomechanics, passed away Wednesday, Oct. 7 at his home in Lexington, Kentucky, according to his wife, Sally Nims-Seaman. He was 85. &amp;#8220</p>
-      </a>
-    </article>
-    <article class="card" data-src="BH">
-      <a href="https://www.bloodhorse.com/horse-racing/articles/295233/rhapsody-farm-shines-at-saratoga-sale-with-dornoch-colt" target="_blank" rel="noopener">
-        <span class="badge" style="background:#0a4d8c">BH</span>
-        <h2>Rhapsody Farm Shines at Saratoga Sale With Dornoch Colt</h2>
-        <p class="meta">BloodHorse &middot; 3h ago</p>
-        <p class="desc">Elaine Peck&#x27;s Rhapsody Farm had a banner day with its weanlings by first-crop sires at the Fasig-Tipton Saratoga Fall Mixed Sale Oct. 12. A colt by multiple grade 1 winner Dornoch topped the sale, bringing $260,000 from </p>
-      </a>
-    </article>
-    <article class="card" data-src="BH">
-      <a href="https://www.bloodhorse.com/horse-racing/articles/295236/cowboy-culture-gets-a-fresh-start-at-showalter-stables" target="_blank" rel="noopener">
-        <span class="badge" style="background:#0a4d8c">BH</span>
-        <h2>Cowboy Culture Gets a Fresh Start at Showalter Stables</h2>
-        <p class="meta">BloodHorse &middot; 3h ago</p>
-        <p class="desc">New owner Gary Showalter and trainer Tom Foley bought the grade 3-winning son of Quality Road and hope to restart his stallion career at Showalter&#x27;s new farm near Horseshoe Indianapolis.</p>
-      </a>
-    </article>
-    <article class="card" data-src="TDN">
-      <a href="https://www.thoroughbreddailynews.com/american-pharoah-anchors-jbba-roster-at-25-2k/" target="_blank" rel="noopener">
-        <span class="badge" style="background:#7a1f1f">TDN</span>
-        <h2>American Pharoah Anchors JBBA Roster At $25.2k</h2>
-        <p class="meta">TDN &middot; 3h ago</p>
-        <p class="desc">American Triple Crown hero American Pharoah will stand for an unchanged fee of ¥4 million ($25.2k) in his second year at stud in Japan, the Japan Bloodhorse Breeders&#x27; Association (JBBA) posted on their website. Residing </p>
-      </a>
-    </article>
-    <article class="card" data-src="BH">
-      <a href="https://www.bloodhorse.com/horse-racing/articles/295234/bh-monday-japans-bc-runners-racing-returns-to-kansas" target="_blank" rel="noopener">
-        <span class="badge" style="background:#0a4d8c">BH</span>
-        <h2>BH Monday: Japan&#x27;s BC Runners, Racing Returns to Kansas</h2>
-        <p class="meta">BloodHorse &middot; 3h ago</p>
-        <p class="desc">On the Oct. 12 episode of BloodHorse Monday: Kate Hunter highlights the horses coming from Japan to compete in the Breeders&#x27; Cup, Eureka Downs general manager Mike Weiss on racing&#x27;s return to Kansas for the first time in</p>
-      </a>
-    </article>
-    <article class="card" data-src="DRF">
-      <a href="https://news.google.com/rss/articles/CBMiiwFBVV95cUxOcmxDeV9XeDE5NDBTYU83bWlFWGpxRWN3cXVlWjNNMnk3T1hnVWRpM2R1RW1VVFhsSFBIVXRObmVsSEQteU0zQnZXNk0tY2RzbUFjTENjWEZMNlJ2WGhkSTZDMlQzdlNFTmVuVW5mMkhZa3c4UG93Nl9WWXNaM0xycU1XSVh4M3E4UWYw?oc=5" target="_blank" rel="noopener">
-        <span class="badge" style="background:#1a6b3c">DRF</span>
-        <h2>Skippylongstocking runs out of time to make Breeders&#x27; Cup Classic</h2>
-        <p class="meta">DRF &middot; 3h ago</p>
-        
-      </a>
-    </article>
-    <article class="card" data-src="BH">
-      <a href="https://www.bloodhorse.com/horse-racing/articles/295235/blue-point-colt-rebounds-nicely-at-tattersalls-book-2" target="_blank" rel="noopener">
-        <span class="badge" style="background:#0a4d8c">BH</span>
-        <h2>Blue Point Colt Rebounds Nicely at Tattersalls Book 2</h2>
-        <p class="meta">BloodHorse &middot; 4h ago</p>
-        <p class="desc">Plan B worked like a charm for Ballyhimikin Stud when a well-related Blue Point colt progressed from a 215,000 guineas foal to a 600,000 guineas yearling Oct. 12 during the opening session of Book 2 of the Tattersalls Oc</p>
-      </a>
-    </article>
-    <article class="card" data-src="TDN">
-      <a href="https://www.thoroughbreddailynews.com/breeding-digest-striking-gold-in-parallel-seams/" target="_blank" rel="noopener">
-        <span class="badge" style="background:#7a1f1f">TDN</span>
-        <h2>Breeding Digest: Striking Gold in Parallel Seams</h2>
-        <p class="meta">TDN &middot; 4h ago</p>
-        <p class="desc">They made them differently, back then: horses and horsemen alike. Jock Whitney was so interested by the favorite for the 1949 Spinaway Stakes that he watched her being saddled instead of his own filly, Sunday Evening. Af</p>
-      </a>
-    </article>
-    <article class="card" data-src="TDN">
-      <a href="https://www.thoroughbreddailynews.com/dozen-chelmsford-fixtures-purchased-by-the-jockey-club/" target="_blank" rel="noopener">
-        <span class="badge" style="background:#7a1f1f">TDN</span>
-        <h2>Dozen Chelmsford Fixtures Purchased By The Jockey Club</h2>
-        <p class="meta">TDN &middot; 4h ago</p>
-        <p class="desc">A total of 12 Chelmsford City Racecourse fixtures were purchased by The Jockey Club from the administrators of the Great Leighs course. The confirmation comes in the wake of a competitive bidding process. Where the addit</p>
-      </a>
-    </article>
-    <article class="card" data-src="BH">
-      <a href="https://www.bloodhorse.com/horse-racing/articles/295232/showtime-colt-leads-magic-millions-gold-coast-sale" target="_blank" rel="noopener">
-        <span class="badge" style="background:#0a4d8c">BH</span>
-        <h2>Showtime Colt Leads Magic Millions Gold Coast Sale</h2>
-        <p class="meta">BloodHorse &middot; 4h ago</p>
-        <p class="desc">A US$279,277 Showtime colt headed a selective but solid edition of the Magic Millions Gold Coast Horses in Training Sale on Oct. 12, with international buyers playing a prominent role.</p>
-      </a>
-    </article>
-    <article class="card" data-src="TDN">
-      <a href="https://www.thoroughbreddailynews.com/french-guineas-second-the-last-dance-joins-arqanas-vente-delevage/" target="_blank" rel="noopener">
-        <span class="badge" style="background:#7a1f1f">TDN</span>
-        <h2>French Guineas Second The Last Dance Joins Arqana’s Vente d’Elevage</h2>
-        <p class="meta">TDN &middot; 4h ago</p>
-        <p class="desc">The Last Dance, runner-up in the G1 Poule d&#x27;Essai des Pouliches earlier this year, is the newest entry in Arqana&#x27;s Vente d&#x27;Elevage in December. The sale is set for December 5-8. A winning daughter of Iffraaj and the list</p>
-      </a>
-    </article>
-    <article class="card" data-src="BH">
-      <a href="https://www.bloodhorse.com/horse-racing/articles/295231/liams-maps-fee-at-80k-flightline-to-be-determined" target="_blank" rel="noopener">
-        <span class="badge" style="background:#0a4d8c">BH</span>
-        <h2>Liam&#x27;s Map&#x27;s Fee at $80k, Flightline to Be Determined</h2>
-        <p class="meta">BloodHorse &middot; 4h ago</p>
-        <p class="desc">Top five freshman sire Flightline will have his 2027 stud fee set at a later date, while Liam&#x27;s Map&#x27;s fee has been raised to $80,000. Grade 1 winner Deterministic, a son of Liam Map, will join Lane&#x27;s End&#x27;s roster next ye</p>
-      </a>
-    </article>
-    <article class="card" data-src="BRIS">
-      <a href="https://news.google.com/rss/articles/CBMilgFBVV95cUxOMnJDU1NycGc4TS00OWFrVGliNm1wMmsyM3ZRbk83UXVuWXRDNTYyWEllcC0wbGxtRDh6bGpWOHFfLTlYZGlHbUJpLWtJSERvZ3YwY0VWbzM4MW85blBTcHYzXzhQT1lpMXo0ZFhWTVlLSy1GdFRwVEd1R2gxMzR5d2hpMVpXcU1iYWd5YnhIa0FiZlN5Y1E?oc=5" target="_blank" rel="noopener">
-        <span class="badge" style="background:#b3541e">BRIS</span>
-        <h2>Conceit, Mashallah among dozen in Raven Run</h2>
-        <p class="meta">Brisnet &middot; 4h ago</p>
-        
-      </a>
-    </article>
-    <article class="card" data-src="BH">
-      <a href="https://www.bloodhorse.com/horse-racing/articles/295229/breeders-cup-foal-nominations-close-oct-15" target="_blank" rel="noopener">
-        <span class="badge" style="background:#0a4d8c">BH</span>
-        <h2>Breeders&#x27; Cup Foal Nominations Close Oct. 15</h2>
-        <p class="meta">BloodHorse &middot; 5h ago</p>
-        <p class="desc">Breeders&#x27; Cup Limited issued a reminder that Oct. 15, at 11:59 p.m. ET, is the final deadline to nominate foals born in 2026 to the Breeders&#x27; Cup program at the one-time nomination fee of $400.</p>
-      </a>
-    </article>
-    <article class="card" data-src="TDN">
-      <a href="https://www.thoroughbreddailynews.com/half-brother-to-ten-bob-tony-set-for-nottingham-debut/" target="_blank" rel="noopener">
-        <span class="badge" style="background:#7a1f1f">TDN</span>
-        <h2>Half-Brother To Ten Bob Tony Set For Nottingham Debut</h2>
-        <p class="meta">TDN &middot; 5h ago</p>
-        <p class="desc">2.29 Nottingham, Novice, 2yo, 8f 75yT Wednesday&#x27;s low-key fare includes this British Stallion Studs EBF Novice Stakes, which features a number of well-related juveniles making their first start. The 11-runner contest inc</p>
-      </a>
-    </article>
-    <article class="card" data-src="BH">
-      <a href="https://www.bloodhorse.com/horse-racing/downloads/295228/prospective-pinhooks-f-t-eastern-fall-yearlings" target="_blank" rel="noopener">
-        <span class="badge" style="background:#0a4d8c">BH</span>
-        <h2>Prospective Pinhooks: F-T Eastern Fall Yearlings</h2>
-        <p class="meta">BloodHorse &middot; 5h ago</p>
-        <p class="desc">Sale histories for horses entered in the Fasig-Tipton Eastern Fall Yearlings Sale being held Oct. 27 in Timonium, Md.</p>
-      </a>
-    </article>
-    <article class="card" data-src="BH">
-      <a href="https://www.bloodhorse.com/horse-racing/articles/295227/jockey-club-names-t-i-p-non-competition-award-winners" target="_blank" rel="noopener">
-        <span class="badge" style="background:#0a4d8c">BH</span>
-        <h2>Jockey Club Names T.I.P. Non-Competition Award Winners</h2>
-        <p class="meta">BloodHorse &middot; 5h ago</p>
-        <p class="desc">The Jockey Club Thoroughbred Incentive Program announced Oct. 12 the recipients and honorees of its two non-competition awards, the T.I.P. Thoroughbred of the Year Award and the T.I.P. Young Rider of the Year Award, for </p>
-      </a>
-    </article>
-    <article class="card" data-src="BH">
-      <a href="https://www.bloodhorse.com/horse-racing/videos/295226/stakes-recap-queen-elizabeth-ii-and-hill-prince-stakes" target="_blank" rel="noopener">
-        <span class="badge" style="background:#0a4d8c">BH</span>
-        <h2>Stakes Recap: Queen Elizabeth II and Hill Prince Stakes</h2>
-        <p class="meta">BloodHorse &middot; 6h ago</p>
-        <p class="desc">Maggie Wolfendale looks back at the Queen Elizabeth II Challenge Cup from Keeneland and the Hill Prince Stakes at Belmont Park.</p>
-      </a>
-    </article>
-    <article class="card" data-src="TDN">
-      <a href="https://www.thoroughbreddailynews.com/taa-on-site-for-maryland-million-day-2/" target="_blank" rel="noopener">
-        <span class="badge" style="background:#7a1f1f">TDN</span>
-        <h2>TAA on Site for Maryland Million Day</h2>
-        <p class="meta">TDN &middot; 6h ago</p>
-        <p class="desc">Thoroughbred Aftercare Alliance will be present at Laurel Park for the 41st Annual Jim McKay Maryland Million Day Oct. 24. Representatives of TAA will present winners of a race on the card a Thoroughbred Aftercare Allian</p>
-      </a>
-    </article>
-    <article class="card" data-src="BH">
-      <a href="https://www.bloodhorse.com/horse-racing/articles/295205/far-bridge-minaret-station-expected-japan-cup-nominees" target="_blank" rel="noopener">
-        <span class="badge" style="background:#0a4d8c">BH</span>
-        <h2>Far Bridge, Minaret Station Expected Japan Cup Nominees</h2>
-        <p class="meta">BloodHorse &middot; 6h ago</p>
-        <p class="desc">The top two finishers of the Oct. 1 Joe Hirsch Turf Classic (G1T), Minaret Station and Far Bridge, are expected to be nominees to face Calandagan as he seeks to win the Japan Cup (G1) for a second straight year Nov. 29.</p>
-      </a>
-    </article>
-    <article class="card" data-src="TDN">
-      <a href="https://www.thoroughbreddailynews.com/foal-crop-drops-again-sierra-leone-is-most-active-sire/" target="_blank" rel="noopener">
-        <span class="badge" style="background:#7a1f1f">TDN</span>
-        <h2>Foal Crop Drops Again; Sierra Leone is Most Active Sire</h2>
-        <p class="meta">TDN &middot; 6h ago</p>
-        <p class="desc">In its annual Report of Mares Bred (RMBs) released Tuesday, The Jockey Club estimates that the 2027 foal crop will be 16,500. That&#x27;s down 500 from the estimate for the 2026 crop. The numbers released by The Jockey Club f</p>
-      </a>
-    </article>
-    <article class="card" data-src="BH">
-      <a href="https://www.bloodhorse.com/horse-racing/stakes-result/295237/new-york-breeders-futurity-d-i-wire" target="_blank" rel="noopener">
-        <span class="badge" style="background:#0a4d8c">BH</span>
-        <h2>New York Breeders&#x27; Futurity: D I Wire</h2>
-        <p class="meta">BloodHorse &middot; 6h ago</p>
-        <p class="desc">New York Breeders&#x27; Futurity</p>
-      </a>
-    </article>
-    <article class="card" data-src="TDN">
-      <a href="https://www.thoroughbreddailynews.com/at-40k-mindframe-leads-claiborne-stud-fees-in-2027/" target="_blank" rel="noopener">
-        <span class="badge" style="background:#7a1f1f">TDN</span>
-        <h2>At $40k, Mindframe Leads Claiborne Stud Fees in 2027</h2>
-        <p class="meta">TDN &middot; 6h ago</p>
-        <p class="desc">Multiple Grade I winner Mindframe (Constitution) will head the 2027 stallion roster at Claiborne Farm when he enters his second season at stud at a fee of $40,000 next year. The stallion, winner of the 2025 GI Stephen Fo</p>
-      </a>
-    </article>
-    <article class="card" data-src="TDN">
-      <a href="https://www.thoroughbreddailynews.com/ka-ying-rising-to-break-from-barrier-11-in-the-everest-defence/" target="_blank" rel="noopener">
-        <span class="badge" style="background:#7a1f1f">TDN</span>
-        <h2>Ka Ying Rising to Break from Barrier 11 in The Everest Defence</h2>
-        <p class="meta">TDN &middot; 6h ago</p>
-        <p class="desc">Ka Ying Rising (Shamexpress) will break from stall 11 at Randwick on Saturday when the world&#x27;s highest-rated racehorse bids to make it back-to-back wins in the A$20 million G1 The Everest, the world&#x27;s richest turf race. </p>
-      </a>
-    </article>
-    <article class="card" data-src="BH">
-      <a href="https://www.bloodhorse.com/horse-racing/stakes-result/295238/farewell-stakes-far-western" target="_blank" rel="noopener">
-        <span class="badge" style="background:#0a4d8c">BH</span>
-        <h2>Farewell Stakes: Far Western</h2>
-        <p class="meta">BloodHorse &middot; 7h ago</p>
-        <p class="desc">Farewell Stakes</p>
-      </a>
-    </article>
-    <article class="card" data-src="BH">
-      <a href="https://www.bloodhorse.com/horse-racing/stakes-result/295239/grants-pass-distaff-stakes-ima-margarita-girl" target="_blank" rel="noopener">
-        <span class="badge" style="background:#0a4d8c">BH</span>
-        <h2>Grants Pass Distaff Stakes: Ima Margarita Girl</h2>
-        <p class="meta">BloodHorse &middot; 7h ago</p>
-        <p class="desc">Grants Pass Distaff Stakes</p>
-      </a>
-    </article>
-    <article class="card" data-src="TDN">
-      <a href="https://www.thoroughbreddailynews.com/respected-equine-veterinarian-dr-johnny-mac-smith-passes-away/" target="_blank" rel="noopener">
-        <span class="badge" style="background:#7a1f1f">TDN</span>
-        <h2>Respected Equine Veterinarian Dr. Johnny Mac Smith Passes Away</h2>
-        <p class="meta">TDN &middot; 7h ago</p>
-        <p class="desc">Johnny Mac Smith, DVM, passed away on Saturday evening, October 10, after a brief battle with a very aggressive form of liver cancer. He was at home, surrounded by his loving family. A funeral service, followed by a cele</p>
-      </a>
-    </article>
-    <article class="card" data-src="BH">
-      <a href="https://www.bloodhorse.com/horse-racing/stakes-result/295240/farewell-stakes-jacrodras-devil" target="_blank" rel="noopener">
-        <span class="badge" style="background:#0a4d8c">BH</span>
-        <h2>Farewell Stakes: Jacrodra&#x27;s Devil</h2>
-        <p class="meta">BloodHorse &middot; 7h ago</p>
-        <p class="desc">Farewell Stakes</p>
-      </a>
-    </article>
-    <article class="card" data-src="BH">
-      <a href="https://www.bloodhorse.com/horse-racing/stakes-result/295241/h-b-p-a-stakes-just-ruthless" target="_blank" rel="noopener">
-        <span class="badge" style="background:#0a4d8c">BH</span>
-        <h2>H.B.P.A. Stakes: Just Ruthless</h2>
-        <p class="meta">BloodHorse &middot; 8h ago</p>
-        <p class="desc">H.B.P.A. Stakes</p>
-      </a>
-    </article>
-    <article class="card" data-src="TDN">
-      <a href="https://www.thoroughbreddailynews.com/calandagan-primed-to-repeat-last-years-massive-performance-in-champion-stakes/" target="_blank" rel="noopener">
-        <span class="badge" style="background:#7a1f1f">TDN</span>
-        <h2>Calandagan Primed to Repeat Last Year’s “Massive Performance” in Champion Stakes</h2>
-        <p class="meta">TDN &middot; 10h ago</p>
-        <p class="desc">The team at the Aga Khan Studs is set to deploy two of its star names at Ascot on Qatar Racing British Champions Day, with Calandagan (Gleneagles) seeking a repeat win in the G1 Qatar Racing Champion Stakes and Rayif (Se</p>
-      </a>
-    </article>
-    <article class="card" data-src="TDN">
-      <a href="https://www.thoroughbreddailynews.com/there-is-no-sale-like-the-goffs-november-foal-sale-and-this-years-catalogue-underlines-why/" target="_blank" rel="noopener">
-        <span class="badge" style="background:#7a1f1f">TDN</span>
-        <h2>‘There is No Sale Like the Goffs November Foal Sale and This Year’s Catalogue Underlines Why’</h2>
-        <p class="meta">TDN &middot; 10h ago</p>
-        <p class="desc">The catalogue for the Goffs November Foal Sale is now available online, with 218 foals out of stakes-producing mares and 148 out of stakes-performing dams featuring among 1,028 lots set to be offered during the four-day </p>
-      </a>
-    </article>
-    <article class="card" data-src="TDN">
-      <a href="https://www.thoroughbreddailynews.com/people-covet-a-nice-new-york-bred-dornoch-colt-tops-fasig-tipton-sarataoga-fall-mixed-sale/" target="_blank" rel="noopener">
-        <span class="badge" style="background:#7a1f1f">TDN</span>
-        <h2>‘People Covet A Nice New York-Bred’: Dornoch Colt Tops Fasig-Tipton Saratoga Fall Mixed Sale</h2>
-        <p class="meta">TDN &middot; 21h ago</p>
-        <p class="desc">Monday&#x27;s 14th renewal of the Fasig-Tipton Saratoga Fall Mixed Sale in upstate New York had some pretty big shoes to fill, given the record-setting returns from last October. When the dust had settled in the Humphrey S. F</p>
-      </a>
-    </article>
-    <article class="card" data-src="BRIS">
-      <a href="https://news.google.com/rss/articles/CBMirAFBVV95cUxNWVF6cjdjTnFTTGFEcks5eWt0U0pXMU1IZ1FTVkl1Zk9HWm1KY21SVUlrRERKNnROQ3V0MUN0WUE1a3M1S09Gd3NIQlExU3NneThjT25WdHhxRnBHNzNiUWlVcVY0amtKNktkWkhrZFBBVGdJZF9rejJvUzJRMXp5b2gtVjFITWQxT1BOVGVFTGw3ZEZZbldhT0Q2cFRYa0FFcUN2ZXhkQTkwYnZ5?oc=5" target="_blank" rel="noopener">
-        <span class="badge" style="background:#b3541e">BRIS</span>
-        <h2>Horseshoe Indianapolis At a Glance Oct. 12, 2026</h2>
-        <p class="meta">Brisnet &middot; 22h ago</p>
-        
-      </a>
-    </article>
-    <article class="card" data-src="DRF">
-      <a href="https://news.google.com/rss/articles/CBMilgFBVV95cUxOUGtWanYxQlU2cmowSmtMbS1nakowRUxsSzQ4TC04ZXl0aDZwa3lKcXU0T2xWS2RtSFdPS1ZjQ29NRUt6MzNRQUJGLUt6Mi1lT2FiWnVKNDVtamJjbzdpWUI5SnQ0YkNqR3pzSU9ZTFZIOUpKMnRwSGhnNUFVM0VmdXVHaHNGS3dKYW53b050bU96U09lMHc?oc=5" target="_blank" rel="noopener">
-        <span class="badge" style="background:#1a6b3c">DRF</span>
-        <h2>Heavily favored D I Wire goes wire to wire in New York Breeders&#x27; Futurity</h2>
-        <p class="meta">DRF &middot; 22h ago</p>
-        
-      </a>
-    </article>
-    <article class="card" data-src="TDN">
-      <a href="https://www.thoroughbreddailynews.com/falling-creek-latest-upstart-winner-to-carry-brereton-jones-colors/" target="_blank" rel="noopener">
-        <span class="badge" style="background:#7a1f1f">TDN</span>
-        <h2>Falling Creek Latest Upstart Winner to Carry Brereton Jones Colors</h2>
-        <p class="meta">TDN &middot; 22h ago</p>
-        <p class="desc">FALLING CREEK (f, 2, Upstart&amp;#8211;Silver Reunion {GSW, $254,403}, by Harlan&#x27;s Holiday) became the latest daughter of Upstart, and the latest runner to hail from the venerable program of the late Brereton Jones, to strid</p>
-      </a>
-    </article>
-    <article class="card" data-src="TDN">
-      <a href="https://www.thoroughbreddailynews.com/wildcarded-blue-point-gets-his-day-as-book-2-off-to-strong-start-at-tattersalls/" target="_blank" rel="noopener">
-        <span class="badge" style="background:#7a1f1f">TDN</span>
-        <h2>Wildcarded Blue Point Gets His Day As Book 2 Off To Strong Start At Tattersalls</h2>
-        <p class="meta">TDN &middot; 23h ago</p>
-        <p class="desc">NEWMARKET, UK &amp;#8211; If Book 1 set the tone, the opening Book 2 session of the October Yearling Sale kept the market humming along nicely at Tattersalls on Monday. A healthy demand for horses sustained respectable trade</p>
-      </a>
-    </article>
-    <article class="card" data-src="TDN">
-      <a href="https://www.thoroughbreddailynews.com/a-rare-offering-glennwood-brings-grade-i-producers-to-fasig-tipton-november/" target="_blank" rel="noopener">
-        <span class="badge" style="background:#7a1f1f">TDN</span>
-        <h2>A Rare Offering: Glennwood Brings Grade I Producers to Fasig-Tipton November</h2>
-        <p class="meta">TDN &middot; 1d ago</p>
-        <p class="desc">It&#x27;s been a banner year for Glennwood Farm, even by the high standards John Gunther and his daughter Tanya have set for their boutique breeding program. Napoleon Solo (Liam&#x27;s Map) became the latest Classic winner bred by</p>
-      </a>
-    </article>
-    <article class="card" data-src="TDN">
-      <a href="https://www.thoroughbreddailynews.com/with-flightline-fee-tbd-quality-road-leads-lanes-ends-2027-roster-at-100k/" target="_blank" rel="noopener">
-        <span class="badge" style="background:#7a1f1f">TDN</span>
-        <h2>With Flightline Fee TBD, Quality Road Leads Lane’s End’s 2027 Roster at $100k</h2>
-        <p class="meta">TDN &middot; 1d ago</p>
-        <p class="desc">While champion Flightline&#x27;s 2027 stud fee is still to be determined, Quality Road currently leads the 2027 Lane&#x27;s End stallion roster as his fee remains steady at $100,000. Liam&#x27;s Map, whose three Grade I winners in 2026</p>
-      </a>
-    </article>
-    <article class="card" data-src="TDN">
-      <a href="https://www.thoroughbreddailynews.com/timeform-darkness-falls-a-perfectly-viable-triple-crown-contender/" target="_blank" rel="noopener">
-        <span class="badge" style="background:#7a1f1f">TDN</span>
-        <h2>Timeform: Darkness Falls “A Perfectly Viable Triple Crown Contender”</h2>
-        <p class="meta">TDN &middot; 1d ago</p>
-        <p class="desc">Timeform have described Darkness Falls (Camelot) as &amp;#8220;a perfectly viable Triple Crown contender&amp;#8221; following his victory in Saturday&#x27;s G1 Darley Dewhurst Stakes. Aidan O&#x27;Brien&#x27;s colt achieved a rating of 119p fo</p>
-      </a>
-    </article>
-    <article class="card" data-src="TDN">
-      <a href="https://www.thoroughbreddailynews.com/hayes-ka-ying-rising-as-good-as-black-caviar/" target="_blank" rel="noopener">
-        <span class="badge" style="background:#7a1f1f">TDN</span>
-        <h2>Hayes: Ka Ying Rising “As Good As Black Caviar”</h2>
-        <p class="meta">TDN &middot; 1d ago</p>
-        <p class="desc">With five days to go until Ka Ying Rising (Shamexpress) bids to defend his G1 The Everest crown at Randwick, trainer David Hayes has reaffirmed his belief in the Hong Kong sprint sensation, describing the nine-time Group</p>
-      </a>
-    </article>
-    <article class="card" data-src="DRF">
-      <a href="https://news.google.com/rss/articles/CBMifkFVX3lxTFBaWnBvcjlINmdGZW9EdTNTaVBSOF9wTFRLU05LTlp4eGlrRDQ0eER4a0VjNm96Ukc4OWFhUzZ2R0pCLWFmamx2ZUxrREhsVFFnRjA2SW5ZbU0xVFdNbzd1NldVcXlmQmxVZFZKZFpGZFphTnU3b3pyc05vVHVNQQ?oc=5" target="_blank" rel="noopener">
-        <span class="badge" style="background:#1a6b3c">DRF</span>
-        <h2>Brother vs. brother in Commonwealth Sire Stakes at Parx</h2>
-        <p class="meta">DRF &middot; 1d ago</p>
-        
-      </a>
-    </article>
-    <article class="card" data-src="TDN">
-      <a href="https://www.thoroughbreddailynews.com/sir-philip-davies-joins-bha-board/" target="_blank" rel="noopener">
-        <span class="badge" style="background:#7a1f1f">TDN</span>
-        <h2>Sir Philip Davies Joins BHA Board</h2>
-        <p class="meta">TDN &middot; 1d ago</p>
-        <p class="desc">The British Horseracing Authority (BHA) confirmed on Monday that the Racecourse Association (RCA) has appointed Sir Philip Davies to the BHA Board. Davies joins as the RCA&#x27;s Member Nominated Director (MND) on an interim </p>
-      </a>
-    </article>
-    <article class="card" data-src="TDN">
-      <a href="https://www.thoroughbreddailynews.com/breeders-cup-foal-nominations-close-oct-15-2/" target="_blank" rel="noopener">
-        <span class="badge" style="background:#7a1f1f">TDN</span>
-        <h2>Breeders’ Cup Foal Nominations Close Oct. 15</h2>
-        <p class="meta">TDN &middot; 1d ago</p>
-        <p class="desc">Edited Press Release Thursday, Oct. 15 at 11:59pm ET is the final deadline to nominate foals born in 2026 to the Breeders&#x27; Cup program at the one-time nomination fee of $400 USD, the organization announced Monday. The $4</p>
-      </a>
-    </article>
-    <article class="card" data-src="TDN">
-      <a href="https://www.thoroughbreddailynews.com/herfs-ryan-ready-for-second-career-program-could-contribute-to-significant-reduction-in-fatality-rate/" target="_blank" rel="noopener">
-        <span class="badge" style="background:#7a1f1f">TDN</span>
-        <h2>HERF’s ‘Ryan’ Ready for Second Career; Program Could Contribute to Significant Reduction in Fatality Rate</h2>
-        <p class="meta">TDN &middot; 1d ago</p>
-        <p class="desc">The Thoroughbred nicknamed Ryan, who was profiled in TDN six months ago as the first participant in the Empty Stall Challenge run by the HISA Equine Recovery Foundation (HERF), has recovered well enough from slab fractur</p>
-      </a>
-    </article>
-    <article class="card" data-src="TDN">
-      <a href="https://www.thoroughbreddailynews.com/the-jockey-club-releases-t-i-p-non-competition-winners-honorees/" target="_blank" rel="noopener">
-        <span class="badge" style="background:#7a1f1f">TDN</span>
-        <h2>The Jockey Club Releases T.I.P. Non-Competition Winners, Honorees</h2>
-        <p class="meta">TDN &middot; 1d ago</p>
-        <p class="desc">Two non-competition awards were presented to recipients and honorees by the Jockey Club Thoroughbred Incentive Program (T.I.P.), namely the Thoroughbred of the Year and Young Rider of the Year, for 2026, the group announ</p>
-      </a>
-    </article>
-    <article class="card" data-src="TDN">
-      <a href="https://www.thoroughbreddailynews.com/stars-assemble-for-qatar-racing-british-champions-day/" target="_blank" rel="noopener">
-        <span class="badge" style="background:#7a1f1f">TDN</span>
-        <h2>Stars Assemble for Qatar Racing British Champions Day</h2>
-        <p class="meta">TDN &middot; 1d ago</p>
-        <p class="desc">The 16th running of Qatar Racing British Champions Day at Ascot this Saturday will once again bring together the very best horses from across Europe, with many of the season&#x27;s stars confirmed on Monday. Eight of the hors</p>
-      </a>
-    </article>
-    <article class="card" data-src="TDN">
-      <a href="https://www.thoroughbreddailynews.com/qa-with-justin-mcdonald-executive-vice-president-and-chief-marketing-officer-breeders-cup/" target="_blank" rel="noopener">
-        <span class="badge" style="background:#7a1f1f">TDN</span>
-        <h2>Q&amp;A with Justin McDonald, Executive Vice President and Chief Marketing Officer, Breeders’ Cup</h2>
-        <p class="meta">TDN &middot; 1d ago</p>
-        <p class="desc">Justin McDonald brings nearly 30 years of marketing experience to his role at the Breeders&#x27; Cup, where he oversees strategy for brand management, ticketing, broadcast and media, wagering, digital and social marketing, ad</p>
-      </a>
-    </article>
-    <article class="card" data-src="TS">
-      <a href="https://news.google.com/rss/articles/CBMiswFBVV95cUxOcEY3QklIbzM2QUdQUHdNMndmSERvR0tpSjlQZHJKNFpYZU5fUXp6WS1mTnkyV3U0MzZqdHQ0QmFRQllOb0ItYl9UYnlnMERHc3o2NEE0ZlB1eXdYcFJ4akhOV01SdkFuYmp3a1l5ZlVGekk1bHY4RFlMUFVCcmZyNUZQYXVsSkRKZm8tcVBCVzZyUkZGVFhPbjFPa2NTTnB2U25hbEpBVnBua1hmVXRfOTdtMA?oc=5" target="_blank" rel="noopener">
-        <span class="badge" style="background:#0f5c8c">TS</span>
-        <h2>Monday’s Best Bets and Quick Picks: $12,729 Super High 5 carryover</h2>
-        <p class="meta">TwinSpires &middot; 1d ago</p>
-        
-      </a>
-    </article>
-    <article class="card" data-src="DRF">
-      <a href="https://news.google.com/rss/articles/CBMipgFBVV95cUxPWWd1WVV0WnpxcmV0NTd3UGQ4M1c0WkxwNDhHY0tfN0pVQ09LOFNQR3k4azRVaTAyLXhQYmlhY1hZallOdVk1X1lwcEdJUEFjdzdYVFNSUHk1Rm1iVEowNVpvaTdrT2paNjhZc1lPQ1BJa2RNNjlyS1F3VHJDX2JneGZBTUdKLUdHSVpZZUYxOGRxVEdCZnNKT2lhSzlFTUh0a1E1UVl3?oc=5" target="_blank" rel="noopener">
-        <span class="badge" style="background:#1a6b3c">DRF</span>
-        <h2>Grand Slam Smile passes earnings milestone with California Distaff Handicap victory</h2>
-        <p class="meta">DRF &middot; 1d ago</p>
-        
-      </a>
-    </article>
-    <article class="card" data-src="DRF">
-      <a href="https://news.google.com/rss/articles/CBMikAFBVV95cUxOX1pkd09fSE03bWVBMjBfbFlUN0R3bWVSdHZGNEtwbExnNS12dVpydUxyVWl6bHRHdjdhVTNnbzVOX05kcDJWaE1ib0pSMjk3OU04Y2VXOXRvR20zRHhxWTN5d05rd0pZR0xqeEh6NEZLMWpabHVRd3hELURuYlUwTDNBaHFRNjh1LXNnWUUwczA?oc=5" target="_blank" rel="noopener">
-        <span class="badge" style="background:#1a6b3c">DRF</span>
-        <h2>Breeders&#x27; Cup Sprint: Maximum Bourbon will not race, trainer says</h2>
-        <p class="meta">DRF &middot; 1d ago</p>
-        
-      </a>
-    </article>
-    <article class="card" data-src="DRF">
-      <a href="https://news.google.com/rss/articles/CBMihAFBVV95cUxQU2ZsNnNWc0RnRnRxUzdIQkxzRDlBY1p0NmdUYjZOT0toczZFTkdzV2o1US1TUGJ1bloxYkZUUlBYOWR1VUlpNEFMcVhzazZiQnFtUy1ZbFJLQk52VkR4QW94SE5Oc2FBUzdyNmlkUlM5YTRCamZNMWtuT3I4dmZmX1NBLTg?oc=5" target="_blank" rel="noopener">
-        <span class="badge" style="background:#1a6b3c">DRF</span>
-        <h2>Turf Paradise allegedly locks out Skyfall 7 employees</h2>
-        <p class="meta">DRF &middot; 1d ago</p>
-        
-      </a>
-    </article>
-    <article class="card" data-src="DRF">
-      <a href="https://news.google.com/rss/articles/CBMijwFBVV95cUxQWUl4MmhnUHpqaExseDJVQ08yTmU4OGJGTHpWci1JZ1BnSklKZjkzdXV4djlNTjE1eEtRWXBray1lSWhSMFNlZmNIRFo0cXlnN2gxVGx6NVZPbmw1SmwzbzJTVFFoNHF1VmVPWWQ5SlQzV21iMXMxOU5xcjhWUkptNWx1Z3RhV01WNmFYb1ZEUQ?oc=5" target="_blank" rel="noopener">
-        <span class="badge" style="background:#1a6b3c">DRF</span>
-        <h2>Breeders&#x27; Cup Classic: Forever Young, Phileas Fogg, Sovereignty put in works</h2>
-        <p class="meta">DRF &middot; 2d ago</p>
-        
-      </a>
-    </article>
-    <article class="card" data-src="PA">
-      <a href="https://news.google.com/rss/articles/CBMia0FVX3lxTFBLU0xwSkhmY18xN3FXOWxZSm9IOEJTNmtidFJPcXE2TGhmSUJKenl3aDMzcWpSTEwzNTE2bGVLazJscUNQRi1GU210c012bGgyX2FBYjQwZUlsaUF0ektkanpfdkFTaVl0NFVn?oc=5" target="_blank" rel="noopener">
-        <span class="badge" style="background:#5b4a8a">PA</span>
-        <h2>Fractional Time Errors</h2>
-        <p class="meta">PaceAdvantage &middot; 2d ago</p>
-        
-      </a>
-    </article>
-    <article class="card" data-src="PA">
-      <a href="https://news.google.com/rss/articles/CBMiakFVX3lxTE92TkFiVmdwVGkxeEFRdkdOQ0E5Z1hhekFWYXg3aVFVbzdpbmVnNDBQTFpBeG5Qa3JXUkRmYXJYQXlzU05pZ3gyelZfVW5ETUxQZjdQM2pDUU5nUkFUYXE5Yl85S2tndTFRLVE?oc=5" target="_blank" rel="noopener">
-        <span class="badge" style="background:#5b4a8a">PA</span>
-        <h2>it&#x27;s raining in Southern California today</h2>
-        <p class="meta">PaceAdvantage &middot; 2d ago</p>
-        
-      </a>
-    </article>
-    <article class="card" data-src="PA">
-      <a href="https://news.google.com/rss/articles/CBMia0FVX3lxTE5DSDM0eUtFemNCSmZDLVBDLXdSSGNOX0tJcmYxRWc4VUVOMk05UHQ3eklNd0ZNZHlqU25XQmt5NzZ4Qk1PenVkNUUtVHNlb2ExY3ZBMUozVmpsUXBHallBZWFFV3FVaFdHOERR?oc=5" target="_blank" rel="noopener">
-        <span class="badge" style="background:#5b4a8a">PA</span>
-        <h2>Mercury Marauder</h2>
-        <p class="meta">PaceAdvantage &middot; 2d ago</p>
-        
-      </a>
-    </article>
-    <article class="card" data-src="DRF">
-      <a href="https://news.google.com/rss/articles/CBMieEFVX3lxTE1hM2h3NmZHZ0xpajFZWEg1U3QzTnBVckdBQ1JnYUxDY1hHWWhsVkd1N1NkSGFCZmdMcGFyQkZlV2pzWEl3UmhiZE1vbGtuNV94b2tEMW1KcElKcFZPMGpPb3hCZXJ3c3FOU3lKNmVYdFRha2V2TkZSWQ?oc=5" target="_blank" rel="noopener">
-        <span class="badge" style="background:#1a6b3c">DRF</span>
-        <h2>DRF Entries &amp; Race Results | Official DRF Results Daily</h2>
-        <p class="meta">DRF &middot; 2d ago</p>
-        
-      </a>
-    </article>
-    <article class="card" data-src="BRIS">
-      <a href="https://news.google.com/rss/articles/CBMiowFBVV95cUxNWmtRVXg1U1ZhTDhkWnNlUmRqOEVVMnhRSVU3NzFUa003QkF1NjVWVEhtT1kxU2J0X1cybkk1M1M4WWNHdG9GYUUxM0hSbGx0NlFIZGRMc0VsdGl5a1hwU2FEVHhNWWQ4VEVvaERkZEppSllTR2RmMG9kRno0YjZGSDR3dDJHSTFyU0lXOXR0ekdMT1BEVnFvS2FJakhGazdNbGlV?oc=5" target="_blank" rel="noopener">
-        <span class="badge" style="background:#b3541e">BRIS</span>
-        <h2>Tam Tam notches second Grade 1 in Queen Elizabeth II</h2>
-        <p class="meta">Brisnet &middot; 2d ago</p>
-        
-      </a>
-    </article>
-    <article class="card" data-src="TS">
-      <a href="https://news.google.com/rss/articles/CBMingFBVV95cUxPNEZkczkxc0l6U3BCa3dPZXk1dzZVRHRwY081ZTZsSElmTlFVWWEwdmFjZkx3STk2NjRQd1VJb2NPSGU3a1FWV1NaaTRBUnpNN0VMRTg4cm9YLWR6RmRmTVUyRVRRR1c5YzBYQlhINFB5TnIwdzdHaVE3NFZ6RmNGdFhyQzJKVHlFa25FelRiQmxFOGlDT3V6Ty1JMkxxUQ?oc=5" target="_blank" rel="noopener">
-        <span class="badge" style="background:#0f5c8c">TS</span>
-        <h2>Pick 4 of the Week: Keeneland Saturday, October 10</h2>
-        <p class="meta">TwinSpires &middot; 4d ago</p>
-        
-      </a>
-    </article>
-    <article class="card" data-src="TS">
-      <a href="https://news.google.com/rss/articles/CBMilwFBVV95cUxNRnBOSU1YSUhKVjFYWHVRRXpQQldNeFBwQVMtZWxDczNhaFRmcUgzY21aeWh1MndKTnlKTXdtRnJwNzZrbVZOdVRtRkdVMkJyMnB1TzhzaFVVUzJQU3AxVG16LWdYVmtKdEUxdm9ORVpJeWZMSkFibG02RjRLWnZuTS1aeUx4ZnNjYlExZjMtQ1U1MEliandJ?oc=5" target="_blank" rel="noopener">
-        <span class="badge" style="background:#0f5c8c">TS</span>
-        <h2>Scully: Late Pick 3 Play at Belmont Saturday</h2>
-        <p class="meta">TwinSpires &middot; 4d ago</p>
-        
-      </a>
-    </article>
-    <article class="card" data-src="DRF">
-      <a href="https://news.google.com/rss/articles/CBMilwFBVV95cUxQYk9STGg4S052Vk92amJXdXhMX0RxYS1CTS1SYld1d284TzhpQ0lEMk1DTEJBd2xTc2RMQmZWTW1WTUh5cWtRWmlLU000cE53V29GSVlMazZnZTJBRDl0YXNZMlc3RzJLbG1sS1BXdWZPcHhFX3MxX1Z3bzI0ajRpZHJjdFlVNk1seXN3WlNoSjN0TkRvNEk0?oc=5" target="_blank" rel="noopener">
-        <span class="badge" style="background:#1a6b3c">DRF</span>
-        <h2>Breeders&#x27; Cup: Napoleon Solo gets competitive in blazing six-furlong work</h2>
-        <p class="meta">DRF &middot; 4d ago</p>
-        
-      </a>
-    </article>
-    <article class="card" data-src="TS">
-      <a href="https://news.google.com/rss/articles/CBMiiwFBVV95cUxPWmhaTGJWeHhYVTZEcHpOOGVQbnV2NVN5Q1lOZHMzdTUwVW1hVmt3dVQ3Q18wUVctUU9EUjI2S2pHSEpnVUxELThUaFpqZzZKT05ZNndrZXI2SFYzbmVhLVNWSG02S2FDOTEtTmJXc25PYTJjc0hCY3NvMjFZaEVKbGYzRkE1Q09tVUZV?oc=5" target="_blank" rel="noopener">
-        <span class="badge" style="background:#0f5c8c">TS</span>
-        <h2>Tipsheet: The 2026 Queen Elizabeth II Stakes</h2>
-        <p class="meta">TwinSpires &middot; 4d ago</p>
-        
-      </a>
-    </article>
-    <article class="card" data-src="PA">
-      <a href="https://news.google.com/rss/articles/CBMia0FVX3lxTE9WTnVOSU1aT1VoSTIyNWZzU3MwLUstZVJ5OE8xLVJpTDNTTEFJWkFTaGxyQjNGQUJqMXJ4Yi15MHRVNDJ5TUYxWl9aTjBldUFlTG5Udk5FVk15SE5hVHM2SHVkTFU1dG9EQnY4?oc=5" target="_blank" rel="noopener">
-        <span class="badge" style="background:#5b4a8a">PA</span>
-        <h2>Stable Footing Inc.</h2>
-        <p class="meta">PaceAdvantage &middot; 5d ago</p>
-        
-      </a>
-    </article>
-    <article class="card" data-src="TS">
-      <a href="https://news.google.com/rss/articles/CBMia0FVX3lxTE4xZWd5TEVNeTZoMWtJdFdQZ2pGU2RZcC1OZ1QtbFZRcGg0VnNkWk1KRzkzODRnaHBJa0dTV0pjSmMtbnIxcG9oMDlTMTRreC02aWRfQU96VHplNVgxMDRtOElvOFkyWjB1VWtV?oc=5" target="_blank" rel="noopener">
-        <span class="badge" style="background:#0f5c8c">TS</span>
-        <h2>Queen Elizabeth II, Hill Prince, &amp; Sycamore Stakes Picks | TwinSpires Jury Live!</h2>
-        <p class="meta">TwinSpires &middot; 5d ago</p>
-        
-      </a>
-    </article>
-    <article class="card" data-src="TS">
-      <a href="https://news.google.com/rss/articles/CBMiekFVX3lxTE8tMGhuTjhja3J0ZTZGZFlhY2hfc2luT3U0Y0NIZXRYNG9FNzR0UUpoNHVrV2sxYWdYWTFxc2ZxbndGck93VnRfRGlBYlZPcFpBb0JZQ2RqSjFEdDhWR1dMakp0YXUtSU4xbjVFOEJLOERIZzVhUFFrcGxn?oc=5" target="_blank" rel="noopener">
-        <span class="badge" style="background:#0f5c8c">TS</span>
-        <h2>🏇 Twinspires Freeplay | Play Daily Games for Great Prizes</h2>
-        <p class="meta">TwinSpires &middot; 6d ago</p>
-        
-      </a>
-    </article>
-    <article class="card" data-src="TS">
-      <a href="https://news.google.com/rss/articles/CBMiekFVX3lxTFBwN29IVnVOcjA0MzN2czdya0xNSkdKMFJDTV9COVZYLTZBZXZRd0wycFNXRHZqbl9MR1JERk9nTUIxVUQ3MlAtRnN1TVRSeWltdEJERTNBVjdfRGgxMHRmX3pzdEF2SVhIN1pMckFud3A5X1F4ZE5nUU93?oc=5" target="_blank" rel="noopener">
-        <span class="badge" style="background:#0f5c8c">TS</span>
-        <h2>🏇 Twinspires Freeplay | Play Daily Games for Great Prizes</h2>
-        <p class="meta">TwinSpires &middot; 6d ago</p>
-        
-      </a>
-    </article>
-    <article class="card" data-src="PA">
-      <a href="https://news.google.com/rss/articles/CBMiakFVX3lxTE9tUVR1T1JPSFcyMXFWMVVyUE9jRHMwZnBWOHVmRzBoYjVHc25hVG9oOHlYZEcxSkg0b1dDZlFnLWpVS3hERHpEUGFoZm9EMENjYXFzakhTdGhWNnktejdzLTBRdXA5cnh2WkE?oc=5" target="_blank" rel="noopener">
-        <span class="badge" style="background:#5b4a8a">PA</span>
-        <h2>California Racing</h2>
-        <p class="meta">PaceAdvantage &middot; 7d ago</p>
-        
-      </a>
-    </article>
-    <article class="card" data-src="BRIS">
-      <a href="https://news.google.com/rss/articles/CBMiogFBVV95cUxNcmJtd3BvTFNqd3pESDNmNDZCNDl0WVRRSmh3M1U5WlNyZEhGd1UxZG9YVVVxQ0pVTm1DZWh4Tmd5d2RWRHZRalNMbzRtUUxCYlBWVFVhc2h5VC1LVDZYVXlqOUxEajdEYzBGVkNGVUswdEZBdy1RWUdIU1d0aXpvdzJEUnJhQVRwWHNLMmttc1lBNlVmUmpicXl1cHAwUXpLYWc?oc=5" target="_blank" rel="noopener">
-        <span class="badge" style="background:#b3541e">BRIS</span>
-        <h2>Luster faces 10 in Queen Elizabeth II Challenge Cup</h2>
-        <p class="meta">Brisnet &middot; 8d ago</p>
-        
-      </a>
-    </article>
-    <article class="card" data-src="DRF">
-      <a href="https://news.google.com/rss/articles/CBMib0FVX3lxTE1wTnBPYmZHZEVaZlRvdVIyVEhiRWRBTHZ1N3hJcUFCZ2V5YmZ6MmJUTGVMSTQwVkM4d1NlRTJnbk5GRUs4MlZxRVhrX2dLVmtzUFg1bXRuNXpsMGRBQ1kwVDBSVEptLWZpSFlCejF5UQ?oc=5" target="_blank" rel="noopener">
-        <span class="badge" style="background:#1a6b3c">DRF</span>
-        <h2>Forever Young kinda, sorta, has workout</h2>
-        <p class="meta">DRF &middot; 9d ago</p>
-        
-      </a>
-    </article>
-    <article class="card" data-src="BRIS">
-      <a href="https://news.google.com/rss/articles/CBMiqAFBVV95cUxQR3ZtYjhLdEpDOTkwSVRhRWpOLTlDb2dYdVRCNno4U3lBTzAwanlwN2FYWkE4cEFVWWNPZnVWUlZRZVVHX0tyR2R3VFdvUE1JTm1WdGdpOGlPZDZ6cVZWeTFFX1dYSXhjZUxTRzQwa2lQeVZFeVZFenFocnlkdnEyLW84d3pwb2NlSkZpdERoRDJJekZoUlNOTUJOcGoyLTFHVnRoTnhPejk?oc=5" target="_blank" rel="noopener">
-        <span class="badge" style="background:#b3541e">BRIS</span>
-        <h2>American History finishes fast to win Breeders’ Futurity</h2>
-        <p class="meta">Brisnet &middot; 9d ago</p>
-        
-      </a>
-    </article>
-    <article class="card" data-src="BRIS">
-      <a href="https://news.google.com/rss/articles/CBMilAFBVV95cUxNSThfRTVJbG9qdXNSZUpDc1JnejZ5aWNGeDJnd0E3di1NNEQ2V1lXTTkzbGk4UlpRYXRXaTB6elhEbS1pU1gyQzZtMWpJaUZ5dzZQLWRYTW5qQjlaczNIaEZTWkNCWXdCcnlRTHlJSlM3REtsUXBZQmJ0SzdHcUQyNzZoQWdjRTBVSHJhZHI5U0NCZTN6?oc=5" target="_blank" rel="noopener">
-        <span class="badge" style="background:#b3541e">BRIS</span>
-        <h2>Dotsy pulls off 11-1 surprise in Frizette</h2>
-        <p class="meta">Brisnet &middot; 9d ago</p>
-        
-      </a>
-    </article>
-    <article class="card" data-src="BRIS">
-      <a href="https://news.google.com/rss/articles/CBMipgFBVV95cUxNMzVrcW1pRWR5aXBDblB0NkFvS2NTbEU2WEFackpFTWFhX3ZleVMzZVF3UWVnS05LYnV6TEg0dnhwQ3VhN25wdUJtR05TWnRfYVpyWVZQMHJsZUx3UWZhTFpqc0JVR1RkM2pyUVd5b2JFcFA2b2t3NUNYVGRwSGszSmhWcVl6c0J6enl3MnJrUnhQMHRwXzBGZEo0NFJya1FLaXF0NFdB?oc=5" target="_blank" rel="noopener">
-        <span class="badge" style="background:#b3541e">BRIS</span>
-        <h2>Hughes impresses on stretch-out in American Pharoah</h2>
-        <p class="meta">Brisnet &middot; 10d ago</p>
-        
-      </a>
-    </article>
-    <article class="card" data-src="PA">
-      <a href="https://news.google.com/rss/articles/CBMiakFVX3lxTFB3aFZORzZkSUs4OENmVVl4TUsyNU9OMVBNLS1HVDdTancxcVFVdlV1QktsRWJNcHYyRjNMUWJFblpHeUpkNlduTGpsSG9GUGZYWGlRS1VudGh3cXc2ZFRFekdLQVZPeXBsRVE?oc=5" target="_blank" rel="noopener">
-        <span class="badge" style="background:#5b4a8a">PA</span>
-        <h2>Champagne Stakes</h2>
-        <p class="meta">PaceAdvantage &middot; 10d ago</p>
-        
-      </a>
-    </article>
-    <article class="card" data-src="PA">
-      <a href="https://news.google.com/rss/articles/CBMiakFVX3lxTE5TbnFETmczZk1hM0YtcXZucjMyMVIyTkw0TGpfZHJ1akFiQXZ6REtkMzU1cHlSdTdXRGRuNm5IMFczUU1SV1AxX2NtQ0tYSXh4Rl9VOEN3czl3and2S1lfNDJTbjRaYXZSbWc?oc=5" target="_blank" rel="noopener">
-        <span class="badge" style="background:#5b4a8a">PA</span>
-        <h2>Breeders Futurity</h2>
-        <p class="meta">PaceAdvantage &middot; 10d ago</p>
-        
-      </a>
-    </article>
-    <article class="card" data-src="PA">
-      <a href="https://news.google.com/rss/articles/CBMia0FVX3lxTFA3c1BOdjVSQUVya1ctMlQwbkZFMERkdW82NGU5Tl9nQnp4WHlKRTc5ZHpMV2JPNVQ3dkRrZkE1ZlJveEx5czhoWnlKWldPU0hTbFBRTThmVVFDQllJTU5fU3pfVWhoejFtMmE0?oc=5" target="_blank" rel="noopener">
-        <span class="badge" style="background:#5b4a8a">PA</span>
-        <h2>Question About the New Pimlico</h2>
-        <p class="meta">PaceAdvantage &middot; 10d ago</p>
-        
-      </a>
-    </article>
-    <article class="card" data-src="BRIS">
-      <a href="https://news.google.com/rss/articles/CBMixwFBVV95cUxNOC1RR3YxUkdQS0xFVEdCdzBYeDRkWW1BQmtrcW9WRmdhN1NBQTVUSS1nRENaNU5QdHluQzVaaTZ5QXdHUjVna01VZVY2SFU2VXg5WWl1STdmcEJYc2Zzc1QtRVFvNVpjTjI3ZWtsWVg1bmZ2TVRFeEJFbHpGTFlhY2NWcjRyWDhXRTBhd3l0bWJSckhvZC04MGN3andOdkZUZHI1OWRIS0tEVGd2bmx6TWtJQ2ZhTXY0MFVHUFJpZTF5dnhIb2NN?oc=5" target="_blank" rel="noopener">
-        <span class="badge" style="background:#b3541e">BRIS</span>
-        <h2>Emphatic holds off Summer Starlet in Alcibiades; Serenas Ghost upsets Jessamine</h2>
-        <p class="meta">Brisnet &middot; 11d ago</p>
-        
-      </a>
-    </article>
-    <article class="card" data-src="BRIS">
-      <a href="https://news.google.com/rss/articles/CBMimgFBVV95cUxNU0lZdnIwWHBzajFmcGt1bUcwZWRLajVGMy1wa2JHaUFWNl8yTTlIeVZTTDJmOHhaQ3JEeFUxQ0JxNk9hZlVpS0kwczRPbXlIdUNKendkNTBKX0psaHNiNWktaTl3bXcycTRJY05CUlZ4UHVzMTZWUEVjQmFtci1uTGE5aFlhNUZybGZteEM3UWhKX3F3eHpwdEFR?oc=5" target="_blank" rel="noopener">
-        <span class="badge" style="background:#b3541e">BRIS</span>
-        <h2>Nakatomi rallies to claim second Phoenix win</h2>
-        <p class="meta">Brisnet &middot; 11d ago</p>
-        
-      </a>
-    </article>
-    <article class="card" data-src="PA">
-      <a href="https://news.google.com/rss/articles/CBMia0FVX3lxTE9sREpVTlFVWDUyN05jWHJ2RUd6Y3d3WlRyU2VYMlR3ZThlQnc0cFFmR050eG5wV0ZMTWlwbjdoeV84NXJwTU4tNHlYZWd5TEZudTNwVU56R2VvbXdPcW00V3NoZDE3TTZKR1VB?oc=5" target="_blank" rel="noopener">
-        <span class="badge" style="background:#5b4a8a">PA</span>
-        <h2>Question About the New Pimlico</h2>
-        <p class="meta">PaceAdvantage &middot; 11d ago</p>
-        
-      </a>
-    </article>
-    <article class="card" data-src="PA">
-      <a href="https://news.google.com/rss/articles/CBMia0FVX3lxTE9EY01nT1AyYnhNbTVxNlFJSXI4X2FoRTNyUmE2cE44aFdJRkR5TlFnaElFVnU4US1OeU1ualdRd1pCTFktcC1UaVkyakUySzZIaE52emdpcHAyWGtGSVJfSk1WdnVSc1ZSejc4?oc=5" target="_blank" rel="noopener">
-        <span class="badge" style="background:#5b4a8a">PA</span>
-        <h2>Interesting AI find....</h2>
-        <p class="meta">PaceAdvantage &middot; 11d ago</p>
-        
-      </a>
-    </article>
-    <article class="card" data-src="TS">
-      <a href="https://news.google.com/rss/articles/CBMiekFVX3lxTE50bGQybHRTc1VkVDRvcVkzR0dFb09RbG9hZmlVMFZreWdIVEpLa2cyTUVCNy1GX3R5eVdmT3drSDJxYmg3Ung0ZGpBNzVTNVNfaHJhdFh6UU1NNGpacjZBVGllM29VdWRWSl93enVSRzFqZnBRdHpJcnVR?oc=5" target="_blank" rel="noopener">
-        <span class="badge" style="background:#0f5c8c">TS</span>
-        <h2>Spot Play Thursday - Oct 1</h2>
-        <p class="meta">TwinSpires &middot; 12d ago</p>
-        
-      </a>
-    </article>
-    <article class="card" data-src="PA">
-      <a href="https://news.google.com/rss/articles/CBMia0FVX3lxTE90LTVsTGNsS3pRRm5nNk9LazltMDNvZmd3SW53elFZZnBlbERYYW4yU1VLVU5ZcTItMDdWc1NVUnBVWHhXc2RCSWFPNXlvUTVwa2ktemJobXNLREc3TkVVVUZpdWJxVm1UbmVJ?oc=5" target="_blank" rel="noopener">
-        <span class="badge" style="background:#5b4a8a">PA</span>
-        <h2>Fionn - Horse Racing Forum - PaceAdvantage.Com - Horse Racing Message Board</h2>
-        <p class="meta">PaceAdvantage &middot; 12d ago</p>
-        
-      </a>
-    </article>
-    <article class="card" data-src="PA">
-      <a href="https://news.google.com/rss/articles/CBMiakFVX3lxTE5KMVpkTzhvUjRyOHExakNvYXIxVy1Na0FYUnY0T25Pc2hoeGJOS1BiVDl1UnpvUFNwYkJMQTliRjdKZnZ5MlR2VGZabENZZjNod3d2Y0Y1NGdNekYwVGlybDYwaHBSUXJjYmc?oc=5" target="_blank" rel="noopener">
-        <span class="badge" style="background:#5b4a8a">PA</span>
-        <h2>Belmonts Tapeta....</h2>
-        <p class="meta">PaceAdvantage &middot; 12d ago</p>
-        
-      </a>
-    </article>
-    <article class="card" data-src="BRIS">
-      <a href="https://news.google.com/rss/articles/CBMirAFBVV95cUxQWFFFc013WEpQaFhxcUVLX25qcEphdjk4blFJRE4yQjhKa3R4dEI3dU5zcXRmQXNLQ2txakdrbDBXN2VIYUpDRHRCZEgtM0pLb2l3ZmNzaG1jM3Z4S0tvaHhJT0l4dGRkWnU3ZE9MRlM4ZWs5Zi1XSGlsMnRVWkw1NXhpR3BwT2x0QWxCY1BvTDVZWlg1SFFUZFMwOGNvdHl6cDhjcDRhOXZQdzZ0?oc=5" target="_blank" rel="noopener">
-        <span class="badge" style="background:#b3541e">BRIS</span>
-        <h2>Super Corredora back in winning groove in BC WAYI Zenyatta</h2>
-        <p class="meta">Brisnet &middot; 16d ago</p>
-        
-      </a>
-    </article>
-    <article class="card" data-src="BRIS">
-      <a href="https://news.google.com/rss/articles/CBMilAFBVV95cUxOQ0ZpZzhJMTVIUFprd25ZQWh5c0lfdGRDM01SOG1JdkNSQWZtN3AtZHlaX2JtcnlMUUxtQXhtRXlObnhUZENxd0MxWERXSEZSaExicGlQbTZRLUozSHJETWJDZDRhN0UydUlpTUgwNDkxSS1GRXFFUkNfZ2lmTmwzNWtTWmFsOTdvaFJSbnRYSXpsTWRQ?oc=5" target="_blank" rel="noopener">
-        <span class="badge" style="background:#b3541e">BRIS</span>
-        <h2>Cabo Spirit hangs on in City of Hope Mile</h2>
-        <p class="meta">Brisnet &middot; 17d ago</p>
-        
-      </a>
-    </article>
-    <article class="card" data-src="BRIS">
-      <a href="https://news.google.com/rss/articles/CBMirAFBVV95cUxPWmQ4WlFDT0ZFc2s5bVNDa2cxWkphVDdKRUEyUW5DTmdTeXMzSkp2TTRMaUVsWDF2d2lGNVB5eHZEMU5kMVM0NGpSM1c5LUJEdUF2TEl6RUtFN1FzTElSOVdVam5CQkdmSUhaNnlHU1RtbU95M2FWb1Z1Nkw1OHpmcmgwTHlMNklpaGJUN3JXVUVLSDJ6YUlveHUxX1p3UFFhdDlVcU8xLVk0cFFv?oc=5" target="_blank" rel="noopener">
-        <span class="badge" style="background:#b3541e">BRIS</span>
-        <h2>Data File Structure for Comprehensive Charts File</h2>
-        <p class="meta">Brisnet &middot; 413d ago</p>
-        
-      </a>
-    </article>
-    <article class="card" data-src="TS">
-      <a href="https://news.google.com/rss/articles/CBMiUEFVX3lxTE9kV2Z2NmRfWGRFZG16N3F0RnNZM1pUaXdEMEktM1N1NjliNkFqaEhycXNJSlI0ZjY0c1haeWFjdnFnbng1YkNXanlxbWMwOEhT?oc=5" target="_blank" rel="noopener">
-        <span class="badge" style="background:#0f5c8c">TS</span>
-        <h2>Rewards | Horse Racing Online</h2>
-        <p class="meta">TwinSpires &middot; 1102d ago</p>
-        
-      </a>
-    </article>
-    <article class="card" data-src="TS">
-      <a href="https://news.google.com/rss/articles/CBMiR0FVX3lxTE94b3NJN3Z3anJYb0N2UnVwS3k0dFd5NXRiS1h5VV9GdjJxWmdpZGlGSU9kOWZQVGZWeG1kVXFwbXhCXy1hejVJ?oc=5" target="_blank" rel="noopener">
-        <span class="badge" style="background:#0f5c8c">TS</span>
-        <h2>The TwinSpires Edge</h2>
-        <p class="meta">TwinSpires &middot; 1127d ago</p>
-        
-      </a>
-    </article>
-    <article class="card" data-src="TS">
-      <a href="https://news.google.com/rss/articles/CBMiUEFVX3lxTE9YU1RsazFQMGRsQnhOV3laMjN6YjZSQTgwc3dwUC0wSW90MXdHb3Y3aVZpdTI3bjJjdmtaM1pfeUxXdF9ybl85N1E1RG5Gd3B6?oc=5" target="_blank" rel="noopener">
-        <span class="badge" style="background:#0f5c8c">TS</span>
-        <h2>TwinSpires</h2>
-        <p class="meta">TwinSpires &middot; 2131d ago</p>
-        
-      </a>
-    </article>
-    <article class="card" data-src="TS">
-      <a href="https://news.google.com/rss/articles/CBMiYEFVX3lxTE9rZ3hLOFYzTkNoWDhSb2tKSjlzUG96VE9waWQ3bTdnX2h3cVpDTF9rRWxkYS0yWktpZlZTY3lhdDFKai1XUUtZVms4V2tsRnpZZHV1ay03dXQxb2RiMFUzSw?oc=5" target="_blank" rel="noopener">
-        <span class="badge" style="background:#0f5c8c">TS</span>
-        <h2>Win $100 in Free Bets: Featured Superfecta</h2>
-        <p class="meta">TwinSpires &middot; 2379d ago</p>
-        
-      </a>
-    </article>
-    <article class="card" data-src="DRF">
-      <a href="https://news.google.com/rss/articles/CBMiREFVX3lxTE5HX2Y2ZzNRcmRsQXpLS2hDdG5tM0t4ZU1qWE5uemtFZU9VYjB2QmZHM25Hd3NxOUR0Zl9VQmVBYUp6T1Vo?oc=5" target="_blank" rel="noopener">
-        <span class="badge" style="background:#1a6b3c">DRF</span>
-        <h2>PPs - Horse Racing Past Performances</h2>
-        <p class="meta">DRF &middot; 2792d ago</p>
-        
-      </a>
-    </article>
-    <article class="card" data-src="DRF">
-      <a href="https://news.google.com/rss/articles/CBMiR0FVX3lxTE80dzUwU0gwdFEzbWFIOEk1WkFWVkJadHRSSHRrczdDb2MyVkVwZlBibVRJWDR2ekRyanlCSjBwUWhDc2o4b3Ew?oc=5" target="_blank" rel="noopener">
-        <span class="badge" style="background:#1a6b3c">DRF</span>
-        <h2>Daily Horse Racing Results | Live Horse Racing Charts &amp; Payouts</h2>
-        <p class="meta">DRF &middot; 5572d ago</p>
-        
       </a>
     </article></div>
-<footer>Sources: BloodHorse, TDN, DRF, Brisnet, TwinSpires, PaceAdvantage forum &middot; links open the original articles</footer>
+<section class="topic" data-topic="Breeders&#x27; Cup"><h3 class="sechead">Breeders&#x27; Cup</h3><p class="secsub">The road to Keeneland, Oct 30–31</p>
+    <article class="card" data-topic="Breeders&#x27; Cup">
+      <a href="https://www.bloodhorse.com/horse-racing/articles/295234/bh-monday-japans-bc-runners-racing-returns-to-kansas" target="_blank" rel="noopener">
+        <span class="kicker">Breeders&#x27; Cup</span>
+        <h2>BH Monday: Japan&#x27;s BC Runners, Racing Returns to Kansas</h2>
+        <p class="desc">On the Oct. 12 episode of BloodHorse Monday: Kate Hunter highlights the horses coming from Japan to compete in the Breeders&#x27; Cup, Eureka Downs general manager Mike Weiss on racing&#x27;s return to Kansas for the first time in</p>
+        <p class="meta">BloodHorse &middot; 4h ago</p>
+      </a>
+    </article>
+    <article class="card" data-topic="Breeders&#x27; Cup">
+      <a href="https://www.bloodhorse.com/horse-racing/articles/295229/breeders-cup-foal-nominations-close-oct-15" target="_blank" rel="noopener">
+        <span class="kicker">Breeders&#x27; Cup</span>
+        <h2>Breeders&#x27; Cup Foal Nominations Close Oct. 15</h2>
+        <p class="desc">Breeders&#x27; Cup Limited issued a reminder that Oct. 15, at 11:59 p.m. ET, is the final deadline to nominate foals born in 2026 to the Breeders&#x27; Cup program at the one-time nomination fee of $400.</p>
+        <p class="meta">BloodHorse &middot; 5h ago</p>
+      </a>
+    </article>
+    <article class="card" data-topic="Breeders&#x27; Cup">
+      <a href="https://news.google.com/rss/articles/CBMiiwFBVV95cUxOcmxDeV9XeDE5NDBTYU83bWlFWGpxRWN3cXVlWjNNMnk3T1hnVWRpM2R1RW1VVFhsSFBIVXRObmVsSEQteU0zQnZXNk0tY2RzbUFjTENjWEZMNlJ2WGhkSTZDMlQzdlNFTmVuVW5mMkhZa3c4UG93Nl9WWXNaM0xycU1XSVh4M3E4UWYw?oc=5" target="_blank" rel="noopener">
+        <span class="kicker">Breeders&#x27; Cup</span>
+        <h2>Skippylongstocking runs out of time to make Breeders&#x27; Cup Classic</h2>
+        
+        <p class="meta">DRF &middot; 6h ago</p>
+      </a>
+    </article>
+    <article class="card" data-topic="Breeders&#x27; Cup">
+      <a href="https://news.google.com/rss/articles/CBMikAFBVV95cUxOX1pkd09fSE03bWVBMjBfbFlUN0R3bWVSdHZGNEtwbExnNS12dVpydUxyVWl6bHRHdjdhVTNnbzVOX05kcDJWaE1ib0pSMjk3OU04Y2VXOXRvR20zRHhxWTN5d05rd0pZR0xqeEh6NEZLMWpabHVRd3hELURuYlUwTDNBaHFRNjh1LXNnWUUwczA?oc=5" target="_blank" rel="noopener">
+        <span class="kicker">Breeders&#x27; Cup</span>
+        <h2>Breeders&#x27; Cup Sprint: Maximum Bourbon will not race, trainer says</h2>
+        
+        <p class="meta">DRF &middot; 2d ago</p>
+      </a>
+    </article>
+    <article class="card" data-topic="Breeders&#x27; Cup">
+      <a href="https://news.google.com/rss/articles/CBMijwFBVV95cUxQWUl4MmhnUHpqaExseDJVQ08yTmU4OGJGTHpWci1JZ1BnSklKZjkzdXV4djlNTjE1eEtRWXBray1lSWhSMFNlZmNIRFo0cXlnN2gxVGx6NVZPbmw1SmwzbzJTVFFoNHF1VmVPWWQ5SlQzV21iMXMxOU5xcjhWUkptNWx1Z3RhV01WNmFYb1ZEUQ?oc=5" target="_blank" rel="noopener">
+        <span class="kicker">Breeders&#x27; Cup</span>
+        <h2>Breeders&#x27; Cup Classic: Forever Young, Phileas Fogg, Sovereignty put in works</h2>
+        
+        <p class="meta">DRF &middot; 2d ago</p>
+      </a>
+    </article>
+    <article class="card" data-topic="Breeders&#x27; Cup">
+      <a href="https://news.google.com/rss/articles/CBMilwFBVV95cUxQYk9STGg4S052Vk92amJXdXhMX0RxYS1CTS1SYld1d284TzhpQ0lEMk1DTEJBd2xTc2RMQmZWTW1WTUh5cWtRWmlLU000cE53V29GSVlMazZnZTJBRDl0YXNZMlc3RzJLbG1sS1BXdWZPcHhFX3MxX1Z3bzI0ajRpZHJjdFlVNk1seXN3WlNoSjN0TkRvNEk0?oc=5" target="_blank" rel="noopener">
+        <span class="kicker">Breeders&#x27; Cup</span>
+        <h2>Breeders&#x27; Cup: Napoleon Solo gets competitive in blazing six-furlong work</h2>
+        
+        <p class="meta">DRF &middot; 4d ago</p>
+      </a>
+    </article></section><section class="topic" data-topic="Stakes &amp; Results"><h3 class="sechead">Stakes &amp; Results</h3><p class="secsub">Who won what, coast to coast</p>
+    <article class="card" data-topic="Stakes &amp; Results">
+      <a href="https://www.bloodhorse.com/horse-racing/articles/295249/mindframe-leads-claiborne-2027-roster" target="_blank" rel="noopener">
+        <span class="kicker">Stakes &amp; Results</span>
+        <h2>Mindframe Leads Claiborne 2027 Roster</h2>
+        <p class="desc">Claiborne Farm announced Oct. 13 the advertised stud fees for its 2027 stallion roster with multiple grade 1 winner Mindframe at the top at $40,000.</p>
+        <p class="meta">BloodHorse &middot; 2h ago</p>
+      </a>
+    </article>
+    <article class="card" data-topic="Stakes &amp; Results">
+      <a href="https://www.bloodhorse.com/horse-racing/articles/295236/cowboy-culture-gets-a-fresh-start-at-showalter-stables" target="_blank" rel="noopener">
+        <span class="kicker">Stakes &amp; Results</span>
+        <h2>Cowboy Culture Gets a Fresh Start at Showalter Stables</h2>
+        <p class="desc">New owner Gary Showalter and trainer Tom Foley bought the grade 3-winning son of Quality Road and hope to restart his stallion career at Showalter&#x27;s new farm near Horseshoe Indianapolis.</p>
+        <p class="meta">BloodHorse &middot; 4h ago</p>
+      </a>
+    </article>
+    <article class="card" data-topic="Stakes &amp; Results">
+      <a href="https://www.bloodhorse.com/horse-racing/articles/295231/liams-maps-fee-at-80k-flightline-to-be-determined" target="_blank" rel="noopener">
+        <span class="kicker">Stakes &amp; Results</span>
+        <h2>Liam&#x27;s Map&#x27;s Fee at $80k, Flightline to Be Determined</h2>
+        <p class="desc">Top five freshman sire Flightline will have his 2027 stud fee set at a later date, while Liam&#x27;s Map&#x27;s fee has been raised to $80,000. Grade 1 winner Deterministic, a son of Liam Map, will join Lane&#x27;s End&#x27;s roster next ye</p>
+        <p class="meta">BloodHorse &middot; 5h ago</p>
+      </a>
+    </article>
+    <article class="card" data-topic="Stakes &amp; Results">
+      <a href="https://news.google.com/rss/articles/CBMilgFBVV95cUxOUGtWanYxQlU2cmowSmtMbS1nakowRUxsSzQ4TC04ZXl0aDZwa3lKcXU0T2xWS2RtSFdPS1ZjQ29NRUt6MzNRQUJGLUt6Mi1lT2FiWnVKNDVtamJjbzdpWUI5SnQ0YkNqR3pzSU9ZTFZIOUpKMnRwSGhnNUFVM0VmdXVHaHNGS3dKYW53b050bU96U09lMHc?oc=5" target="_blank" rel="noopener">
+        <span class="kicker">Stakes &amp; Results</span>
+        <h2>Heavily favored D I Wire goes wire to wire in New York Breeders&#x27; Futurity</h2>
+        
+        <p class="meta">DRF &middot; 1d ago</p>
+      </a>
+    </article>
+    <article class="card" data-topic="Stakes &amp; Results">
+      <a href="https://news.google.com/rss/articles/CBMipgFBVV95cUxPWWd1WVV0WnpxcmV0NTd3UGQ4M1c0WkxwNDhHY0tfN0pVQ09LOFNQR3k4azRVaTAyLXhQYmlhY1hZallOdVk1X1lwcEdJUEFjdzdYVFNSUHk1Rm1iVEowNVpvaTdrT2paNjhZc1lPQ1BJa2RNNjlyS1F3VHJDX2JneGZBTUdKLUdHSVpZZUYxOGRxVEdCZnNKT2lhSzlFTUh0a1E1UVl3?oc=5" target="_blank" rel="noopener">
+        <span class="kicker">Stakes &amp; Results</span>
+        <h2>Grand Slam Smile passes earnings milestone with California Distaff Handicap victory</h2>
+        
+        <p class="meta">DRF &middot; 1d ago</p>
+      </a>
+    </article>
+    <article class="card" data-topic="Stakes &amp; Results">
+      <a href="https://news.google.com/rss/articles/CBMiowFBVV95cUxNWmtRVXg1U1ZhTDhkWnNlUmRqOEVVMnhRSVU3NzFUa003QkF1NjVWVEhtT1kxU2J0X1cybkk1M1M4WWNHdG9GYUUxM0hSbGx0NlFIZGRMc0VsdGl5a1hwU2FEVHhNWWQ4VEVvaERkZEppSllTR2RmMG9kRno0YjZGSDR3dDJHSTFyU0lXOXR0ekdMT1BEVnFvS2FJakhGazdNbGlV?oc=5" target="_blank" rel="noopener">
+        <span class="kicker">Stakes &amp; Results</span>
+        <h2>Tam Tam notches second Grade 1 in Queen Elizabeth II</h2>
+        
+        <p class="meta">Brisnet &middot; 3d ago</p>
+      </a>
+    </article>
+    <article class="card" data-topic="Stakes &amp; Results">
+      <a href="https://news.google.com/rss/articles/CBMixwFBVV95cUxNOC1RR3YxUkdQS0xFVEdCdzBYeDRkWW1BQmtrcW9WRmdhN1NBQTVUSS1nRENaNU5QdHluQzVaaTZ5QXdHUjVna01VZVY2SFU2VXg5WWl1STdmcEJYc2Zzc1QtRVFvNVpjTjI3ZWtsWVg1bmZ2TVRFeEJFbHpGTFlhY2NWcjRyWDhXRTBhd3l0bWJSckhvZC04MGN3andOdkZUZHI1OWRIS0tEVGd2bmx6TWtJQ2ZhTXY0MFVHUFJpZTF5dnhIb2NN?oc=5" target="_blank" rel="noopener">
+        <span class="kicker">Stakes &amp; Results</span>
+        <h2>Emphatic holds off Summer Starlet in Alcibiades; Serenas Ghost upsets Jessamine</h2>
+        
+        <p class="meta">Brisnet &middot; 11d ago</p>
+      </a>
+    </article></section><section class="topic" data-topic="Sales"><h3 class="sechead">Sales</h3><p class="secsub">The auction ring</p>
+    <article class="card" data-topic="Sales">
+      <a href="https://www.bloodhorse.com/horse-racing/articles/295250/celebrated-kentucky-based-veterinarian-smith-dies-at-78" target="_blank" rel="noopener">
+        <span class="kicker">Sales</span>
+        <h2>Celebrated Kentucky-Based Veterinarian Smith Dies at 78</h2>
+        <p class="desc">Johnny Mac Smith, whose work with the Grayson-Jockey Club Research Foundation and with the Keeneland yearling inspection team made him a celebrated equine veterinarian, died Oct. 10 at his Woodford County, Ky. home after</p>
+        <p class="meta">BloodHorse &middot; 2h ago</p>
+      </a>
+    </article>
+    <article class="card" data-topic="Sales">
+      <a href="https://www.bloodhorse.com/horse-racing/articles/295233/rhapsody-farm-shines-at-saratoga-sale-with-dornoch-colt" target="_blank" rel="noopener">
+        <span class="kicker">Sales</span>
+        <h2>Rhapsody Farm Shines at Saratoga Sale With Dornoch Colt</h2>
+        <p class="desc">Elaine Peck&#x27;s Rhapsody Farm had a banner day with its weanlings by first-crop sires at the Fasig-Tipton Saratoga Fall Mixed Sale Oct. 12. A colt by multiple grade 1 winner Dornoch topped the sale, bringing $260,000 from </p>
+        <p class="meta">BloodHorse &middot; 3h ago</p>
+      </a>
+    </article>
+    <article class="card" data-topic="Sales">
+      <a href="https://www.bloodhorse.com/horse-racing/articles/295235/blue-point-colt-rebounds-nicely-at-tattersalls-book-2" target="_blank" rel="noopener">
+        <span class="kicker">Sales</span>
+        <h2>Blue Point Colt Rebounds Nicely at Tattersalls Book 2</h2>
+        <p class="desc">Plan B worked like a charm for Ballyhimikin Stud when a well-related Blue Point colt progressed from a 215,000 guineas foal to a 600,000 guineas yearling Oct. 12 during the opening session of Book 2 of the Tattersalls Oc</p>
+        <p class="meta">BloodHorse &middot; 4h ago</p>
+      </a>
+    </article>
+    <article class="card" data-topic="Sales">
+      <a href="https://www.bloodhorse.com/horse-racing/downloads/295228/prospective-pinhooks-f-t-eastern-fall-yearlings" target="_blank" rel="noopener">
+        <span class="kicker">Sales</span>
+        <h2>Prospective Pinhooks: F-T Eastern Fall Yearlings</h2>
+        <p class="desc">Sale histories for horses entered in the Fasig-Tipton Eastern Fall Yearlings Sale being held Oct. 27 in Timonium, Md.</p>
+        <p class="meta">BloodHorse &middot; 6h ago</p>
+      </a>
+    </article></section><section class="topic" data-topic="International"><h3 class="sechead">International</h3><p class="secsub">Racing around the world</p>
+    <article class="card" data-topic="International">
+      <a href="https://www.bloodhorse.com/horse-racing/articles/295205/far-bridge-minaret-station-expected-japan-cup-nominees" target="_blank" rel="noopener">
+        <span class="kicker">International</span>
+        <h2>Far Bridge, Minaret Station Expected Japan Cup Nominees</h2>
+        <p class="desc">The top two finishers of the Oct. 1 Joe Hirsch Turf Classic (G1T), Minaret Station and Far Bridge, are expected to be nominees to face Calandagan as he seeks to win the Japan Cup (G1) for a second straight year Nov. 29.</p>
+        <p class="meta">BloodHorse &middot; 7h ago</p>
+      </a>
+    </article></section><section class="topic" data-topic="People &amp; Horses"><h3 class="sechead">People &amp; Horses</h3><p class="secsub">The people and horses behind the game</p>
+    <article class="card" data-topic="People &amp; Horses">
+      <a href="https://www.bloodhorse.com/horse-racing/articles/295248/the-jockey-club-reports-declines-in-breeding-activity" target="_blank" rel="noopener">
+        <span class="kicker">People &amp; Horses</span>
+        <h2>The Jockey Club Reports Declines in Breeding Activity</h2>
+        <p class="desc">The Jockey Club releases 2027 foal crop estimate and 2026 Report of Mares Bred statistics.</p>
+        <p class="meta">BloodHorse &middot; 3h ago</p>
+      </a>
+    </article>
+    <article class="card" data-topic="People &amp; Horses">
+      <a href="https://www.bloodhorse.com/horse-racing/articles/295227/jockey-club-names-t-i-p-non-competition-award-winners" target="_blank" rel="noopener">
+        <span class="kicker">People &amp; Horses</span>
+        <h2>Jockey Club Names T.I.P. Non-Competition Award Winners</h2>
+        <p class="desc">The Jockey Club Thoroughbred Incentive Program announced Oct. 12 the recipients and honorees of its two non-competition awards, the T.I.P. Thoroughbred of the Year Award and the T.I.P. Young Rider of the Year Award, for </p>
+        <p class="meta">BloodHorse &middot; 6h ago</p>
+      </a>
+    </article></section><section class="topic" data-topic="More Racing"><h3 class="sechead">More Racing</h3><p class="secsub">Everything else in the game</p>
+    <article class="card" data-topic="More Racing">
+      <a href="https://www.bloodhorse.com/horse-racing/articles/295252/goffs-unveils-november-foal-sale-catalog" target="_blank" rel="noopener">
+        <span class="kicker">More Racing</span>
+        <h2>Goffs Unveils November Foal Sale Catalog</h2>
+        <p class="desc">Goffs unveils the catalog for its November Foal Sale Oct. 13, and it can now be viewed online. It features 1,028 foals to be offered from Nov. 16-19 at Kildare Paddocks.</p>
+        <p class="meta">BloodHorse &middot; 1h ago</p>
+      </a>
+    </article>
+    <article class="card" data-topic="More Racing">
+      <a href="https://www.bloodhorse.com/horse-racing/articles/295254/the-last-dance-added-to-arqana-december-sale" target="_blank" rel="noopener">
+        <span class="kicker">More Racing</span>
+        <h2>The Last Dance Added to Arqana December Sale</h2>
+        <p class="desc">The Last Dance, runner-up in this year&#x27;s Poule d&#x27;Essai des Pouliches (French One Thousand Guineas, G1), has been added to the catalog for the Arqana Breeding Stock Sale and will be offered on the opening evening of the s</p>
+        <p class="meta">BloodHorse &middot; 1h ago</p>
+      </a>
+    </article>
+    <article class="card" data-topic="More Racing">
+      <a href="https://news.google.com/rss/articles/CBMikwFBVV95cUxPODU0cHdVSjg5RGszM3MzR014Si0yLUhLQWpkemhub05zSTJLYVNpdjVXbF93X2hXLXFwT0E4UmMzZHRFOUtFMUlzbFpHdmRpZUdJX0I0LXFmOTNmM2RsdTlOQ3BHdlI0YzBiTlNJZjJhS2pzeUV6RFBMaTl1Z21hYmFsems2dFM5T2ZSMmRrWjdjVVE?oc=5" target="_blank" rel="noopener">
+        <span class="kicker">More Racing</span>
+        <h2>Top Brisnet Class Ratings Oct. 5-11, 2026</h2>
+        
+        <p class="meta">Brisnet &middot; 1h ago</p>
+      </a>
+    </article>
+    <article class="card" data-topic="More Racing">
+      <a href="https://www.bloodhorse.com/horse-racing/articles/295255/at-a-glance-movie-night-projects-as-top-raven-run-bet" target="_blank" rel="noopener">
+        <span class="kicker">More Racing</span>
+        <h2>At a Glance: Movie Night Projects as Top Raven Run Bet</h2>
+        <p class="desc">A brief handicapping look at the Raven Run Stakes (G2) from America&#x27;s Best Racing.</p>
+        <p class="meta">BloodHorse &middot; 1h ago</p>
+      </a>
+    </article>
+    <article class="card" data-topic="More Racing">
+      <a href="https://news.google.com/rss/articles/CBMinAFBVV95cUxNTGUwZ1VkUmZhS01HV01JMnFKbEltaWkyUG40Z2x1RjNnSk0yd0lMcEE4WDlLTndTV2p2VTVYNjJTaDJwZTh3ODBxMXMyUmNQMVZBaGQ1dGkzZkNTRHFrdGtISTRWSmRGb0o5SW1jeUp4VUNrN2FNSkRPcWU2YVJ3RWlwRWVaa3NnU3ZmNXlVcjd1c2d2Q2hCZmxZcHg?oc=5" target="_blank" rel="noopener">
+        <span class="kicker">More Racing</span>
+        <h2>Top Brisnet Speed Stakes Ratings Oct. 5-11, 2026</h2>
+        
+        <p class="meta">Brisnet &middot; 1h ago</p>
+      </a>
+    </article>
+    <article class="card" data-topic="More Racing">
+      <a href="https://news.google.com/rss/articles/CBMiogFBVV95cUxPQjJsX285dllaelE1N1ZqQTJfb3lzVlFWVGlWMXBWdGdCTmNKWTNjTzNVQVRTVFhzbEJhemZ6VE9Ob1FERlppRlNxdW9ON2tEVElzQzZFVDNuZVZWWnpRb3A1dUdQSU11U2QwdFhGSTloakx6cF9sV0Fxek5jbGQ0LTVpOFN3bV9peEgtRGp4TnpYckozRHhSNzFyNGgtUnZhVmc?oc=5" target="_blank" rel="noopener">
+        <span class="kicker">More Racing</span>
+        <h2>Southern California Speed by Circuit Oct. 5-11, 2026</h2>
+        
+        <p class="meta">Brisnet &middot; 1h ago</p>
+      </a>
+    </article>
+    <article class="card" data-topic="More Racing">
+      <a href="https://www.bloodhorse.com/horse-racing/articles/295253/racing-coverage-of-autumn-meets-top-weeks-tv-schedule" target="_blank" rel="noopener">
+        <span class="kicker">More Racing</span>
+        <h2>Racing Coverage of Autumn Meets Top Week&#x27;s TV Schedule</h2>
+        <p class="desc">Fall race meets at Keeneland, Belmont Park, and other tracks are ongoing, and a premier steeplechase event, the Far Hills Race Meeting in New Jersey, is set for Saturday, Oct. 17. Radio, TV, and streaming coverage is pla</p>
+        <p class="meta">BloodHorse &middot; 2h ago</p>
+      </a>
+    </article>
+    <article class="card" data-topic="More Racing">
+      <a href="https://www.bloodhorse.com/horse-racing/articles/295230/dollars-and-sense-texas-sized-losses" target="_blank" rel="noopener">
+        <span class="kicker">More Racing</span>
+        <h2>Dollars &amp; Sense: Texas-Sized Losses</h2>
+        <p class="desc">Dollars &amp; Sense with Frank Angst, sponsored by NTRA, looks at the harmful economic impact from Texas&#x27; decision to not participate in the Horseracing Integrity and Safety Authority.</p>
+        <p class="meta">BloodHorse &middot; 3h ago</p>
+      </a>
+    </article>
+    <article class="card" data-topic="More Racing">
+      <a href="https://www.bloodhorse.com/horse-racing/articles/295232/showtime-colt-leads-magic-millions-gold-coast-sale" target="_blank" rel="noopener">
+        <span class="kicker">More Racing</span>
+        <h2>Showtime Colt Leads Magic Millions Gold Coast Sale</h2>
+        <p class="desc">A US$279,277 Showtime colt headed a selective but solid edition of the Magic Millions Gold Coast Horses in Training Sale on Oct. 12, with international buyers playing a prominent role.</p>
+        <p class="meta">BloodHorse &middot; 5h ago</p>
+      </a>
+    </article>
+    <article class="card" data-topic="More Racing">
+      <a href="https://www.bloodhorse.com/horse-racing/videos/295226/stakes-recap-queen-elizabeth-ii-and-hill-prince-stakes" target="_blank" rel="noopener">
+        <span class="kicker">More Racing</span>
+        <h2>Stakes Recap: Queen Elizabeth II and Hill Prince Stakes</h2>
+        <p class="desc">Maggie Wolfendale looks back at the Queen Elizabeth II Challenge Cup from Keeneland and the Hill Prince Stakes at Belmont Park.</p>
+        <p class="meta">BloodHorse &middot; 6h ago</p>
+      </a>
+    </article>
+    <article class="card" data-topic="More Racing">
+      <a href="https://news.google.com/rss/articles/CBMilgFBVV95cUxOMnJDU1NycGc4TS00OWFrVGliNm1wMmsyM3ZRbk83UXVuWXRDNTYyWEllcC0wbGxtRDh6bGpWOHFfLTlYZGlHbUJpLWtJSERvZ3YwY0VWbzM4MW85blBTcHYzXzhQT1lpMXo0ZFhWTVlLSy1GdFRwVEd1R2gxMzR5d2hpMVpXcU1iYWd5YnhIa0FiZlN5Y1E?oc=5" target="_blank" rel="noopener">
+        <span class="kicker">More Racing</span>
+        <h2>Conceit, Mashallah among dozen in Raven Run</h2>
+        
+        <p class="meta">Brisnet &middot; 7h ago</p>
+      </a>
+    </article>
+    <article class="card" data-topic="More Racing">
+      <a href="https://www.bloodhorse.com/horse-racing/stakes-result/295237/new-york-breeders-futurity-d-i-wire" target="_blank" rel="noopener">
+        <span class="kicker">More Racing</span>
+        <h2>New York Breeders&#x27; Futurity: D I Wire</h2>
+        <p class="desc">New York Breeders&#x27; Futurity</p>
+        <p class="meta">BloodHorse &middot; 7h ago</p>
+      </a>
+    </article>
+    <article class="card" data-topic="More Racing">
+      <a href="https://www.bloodhorse.com/horse-racing/stakes-result/295238/farewell-stakes-far-western" target="_blank" rel="noopener">
+        <span class="kicker">More Racing</span>
+        <h2>Farewell Stakes: Far Western</h2>
+        <p class="desc">Farewell Stakes</p>
+        <p class="meta">BloodHorse &middot; 7h ago</p>
+      </a>
+    </article>
+    <article class="card" data-topic="More Racing">
+      <a href="https://www.bloodhorse.com/horse-racing/stakes-result/295239/grants-pass-distaff-stakes-ima-margarita-girl" target="_blank" rel="noopener">
+        <span class="kicker">More Racing</span>
+        <h2>Grants Pass Distaff Stakes: Ima Margarita Girl</h2>
+        <p class="desc">Grants Pass Distaff Stakes</p>
+        <p class="meta">BloodHorse &middot; 8h ago</p>
+      </a>
+    </article></section>
+<footer>Stories grouped by topic. Sources: BloodHorse, TDN, DRF, Brisnet, TwinSpires, PaceAdvantage &middot; headlines link to the original articles</footer>
 </div>
 <script>
 document.querySelectorAll('.chip').forEach(function(c){
@@ -865,5 +345,12 @@ document.querySelectorAll('.chip').forEach(function(c){
   document.querySelectorAll('.chip').forEach(function(x){x.classList.remove('on');});
   c.classList.add('on');var f=c.dataset.f;
   document.querySelectorAll('.card').forEach(function(a){
-   a.classList.toggle('hide', f!=='all'&&a.dataset.src!==f);});});});
+   a.classList.toggle('hide', f!=='all'&&a.dataset.topic!==f);});
+  document.querySelectorAll('section.topic').forEach(function(s){
+   var any=false;s.querySelectorAll('.card').forEach(function(a){if(!a.classList.contains('hide'))any=true;});
+   s.classList.toggle('hide', f!=='all'&&!any);});
+  var tb=document.querySelector('.topbox');
+  if(tb){var any=false;tb.querySelectorAll('.card').forEach(function(a){if(!a.classList.contains('hide'))any=true;});
+   tb.classList.toggle('hide', f!=='all'&&!any);}
+ });});
 </script></body></html>
